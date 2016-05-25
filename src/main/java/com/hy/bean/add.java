@@ -5,6 +5,7 @@ package com.hy.bean;
  */
 public class add {
     private int id;
+    private String name;
 
     public int getId() {
         return id;
