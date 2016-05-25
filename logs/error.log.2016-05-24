@@ -1,0 +1,7 @@
+2016-05-24 10:47:07  [ ERROR ] - [ nioEventLoopGroup-4-1:4033 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 10:47:10  [ ERROR ] - [ nioEventLoopGroup-4-1:6983 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 10:47:13  [ ERROR ] - [ nioEventLoopGroup-4-1:9983 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 14:40:21  [ ERROR ] - [ nioEventLoopGroup-5-1:11205 ] java.lang.OutOfMemoryError: Java heap space
+2016-05-24 14:42:16  [ ERROR ] - [ nioEventLoopGroup-4-1:4283 ] java.lang.OutOfMemoryError: Java heap space
+2016-05-24 17:30:12  [ ERROR ] - [ nioEventLoopGroup-4-2:201803 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 17:33:03  [ ERROR ] - [ nioEventLoopGroup-5-1:17077 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B

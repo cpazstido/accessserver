@@ -1,0 +1,463 @@
+2016-05-24 10:02:04  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:02:04  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:02:17  [ DEBUG ] - [ nioEventLoopGroup-4-1:12472 ] fire client(/172.16.16.115:2675) comming! at:/172.16.16.112:9001
+2016-05-24 10:02:17  [ DEBUG ] - [ nioEventLoopGroup-4-1:12473 ] randomCode:w03lgcxw
+2016-05-24 10:04:11  [ DEBUG ] - [ nioEventLoopGroup-4-2:127248 ] fire client(/172.16.16.115:2820) comming! at:/172.16.16.112:9001
+2016-05-24 10:04:11  [ DEBUG ] - [ nioEventLoopGroup-4-2:127249 ] randomCode:cq8lj7kc
+2016-05-24 10:13:34  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:13:34  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:13:41  [ DEBUG ] - [ nioEventLoopGroup-4-1:7673 ] fire client(/172.16.16.115:3517) comming! at:/172.16.16.112:9001
+2016-05-24 10:13:41  [ DEBUG ] - [ nioEventLoopGroup-4-1:7674 ] randomCode:89lfpiw0
+2016-05-24 10:14:14  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:14:14  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:14:16  [ DEBUG ] - [ nioEventLoopGroup-4-1:2300 ] fire client(/172.16.16.115:3563) comming! at:/172.16.16.112:9001
+2016-05-24 10:14:16  [ DEBUG ] - [ nioEventLoopGroup-4-1:2302 ] randomCode:nfj89ldj
+2016-05-24 10:16:03  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:16:03  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:16:06  [ DEBUG ] - [ nioEventLoopGroup-5-1:3279 ] fire client(/172.16.16.115:3695) comming! at:/172.16.16.112:9001
+2016-05-24 10:16:06  [ DEBUG ] - [ nioEventLoopGroup-5-1:3280 ] randomCode:uc16ylm2
+2016-05-24 10:17:28  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:17:28  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:17:31  [ DEBUG ] - [ nioEventLoopGroup-4-1:2900 ] fire client(/172.16.16.115:3798) comming! at:/172.16.16.112:9001
+2016-05-24 10:17:31  [ DEBUG ] - [ nioEventLoopGroup-4-1:2902 ] randomCode:4frui3tt
+2016-05-24 10:18:15  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:18:15  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:18:18  [ DEBUG ] - [ nioEventLoopGroup-4-1:2070 ] fire client(/172.16.16.115:3859) comming! at:/172.16.16.112:9001
+2016-05-24 10:18:18  [ DEBUG ] - [ nioEventLoopGroup-4-1:2072 ] randomCode:2h9f0k2v
+2016-05-24 10:18:52  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:18:52  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:18:54  [ DEBUG ] - [ nioEventLoopGroup-4-1:1937 ] fire client(/172.16.16.115:3903) comming! at:/172.16.16.112:9001
+2016-05-24 10:18:54  [ DEBUG ] - [ nioEventLoopGroup-4-1:1939 ] randomCode:enm0ttwc
+2016-05-24 10:20:04  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:20:04  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:20:06  [ DEBUG ] - [ nioEventLoopGroup-5-1:2138 ] fire client(/172.16.16.115:3993) comming! at:/172.16.16.112:9001
+2016-05-24 10:20:06  [ DEBUG ] - [ nioEventLoopGroup-5-1:2139 ] randomCode:z13d1aak
+2016-05-24 10:20:57  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:20:57  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:21:00  [ DEBUG ] - [ nioEventLoopGroup-5-1:2823 ] fire client(/172.16.16.115:4061) comming! at:/172.16.16.112:9001
+2016-05-24 10:21:00  [ DEBUG ] - [ nioEventLoopGroup-5-1:2824 ] randomCode:0mbr299b
+2016-05-24 10:22:09  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:22:09  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:22:11  [ DEBUG ] - [ nioEventLoopGroup-5-1:2158 ] fire client(/172.16.16.115:4146) comming! at:/172.16.16.112:9001
+2016-05-24 10:22:11  [ DEBUG ] - [ nioEventLoopGroup-5-1:2159 ] randomCode:71rat7ae
+2016-05-24 10:23:47  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:23:47  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:23:51  [ DEBUG ] - [ nioEventLoopGroup-5-1:3538 ] fire client(/172.16.16.115:4269) comming! at:/172.16.16.112:9001
+2016-05-24 10:23:51  [ DEBUG ] - [ nioEventLoopGroup-5-1:3539 ] randomCode:6n7qi61y
+2016-05-24 10:24:36  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:24:36  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:24:40  [ DEBUG ] - [ nioEventLoopGroup-5-1:3575 ] fire client(/172.16.16.115:4332) comming! at:/172.16.16.112:9001
+2016-05-24 10:24:40  [ DEBUG ] - [ nioEventLoopGroup-5-1:3576 ] randomCode:m5u0h8om
+2016-05-24 10:25:48  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:25:48  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:25:50  [ DEBUG ] - [ nioEventLoopGroup-4-1:2779 ] fire client(/172.16.16.115:4418) comming! at:/172.16.16.112:9001
+2016-05-24 10:28:31  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:28:31  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:28:33  [ DEBUG ] - [ nioEventLoopGroup-4-1:1837 ] fire client(/172.16.16.115:4618) comming! at:/172.16.16.112:9001
+2016-05-24 10:28:33  [ DEBUG ] - [ nioEventLoopGroup-4-1:1839 ] randomCode:zut7s7zm
+2016-05-24 10:29:21  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:29:21  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:29:23  [ DEBUG ] - [ nioEventLoopGroup-5-1:2235 ] fire client(/172.16.16.115:4682) comming! at:/172.16.16.112:9001
+2016-05-24 10:29:23  [ DEBUG ] - [ nioEventLoopGroup-5-1:2237 ] randomCode:u6aile1o
+2016-05-24 10:29:30  [ DEBUG ] - [ nioEventLoopGroup-5-1:9295 ] /172.16.16.115:4682          fire client exit!
+2016-05-24 10:45:01  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:45:01  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:45:18  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:45:18  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:45:32  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:45:32  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:45:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:2358 ] fire client(/172.16.16.115:1903) comming! at:/172.16.16.112:9001
+2016-05-24 10:45:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:2359 ] randomCode:yab03esp
+2016-05-24 10:45:37  [ DEBUG ] - [ nioEventLoopGroup-4-1:5194 ] /172.16.16.115:1903          fire client exit!
+2016-05-24 10:45:38  [ DEBUG ] - [ nioEventLoopGroup-4-2:6341 ] fire client(/172.16.16.115:1908) comming! at:/172.16.16.112:9001
+2016-05-24 10:45:38  [ DEBUG ] - [ nioEventLoopGroup-4-2:6341 ] randomCode:hv782v3b
+2016-05-24 10:45:41  [ DEBUG ] - [ nioEventLoopGroup-4-2:9464 ] /172.16.16.115:1908          fire client exit!
+2016-05-24 10:45:44  [ DEBUG ] - [ nioEventLoopGroup-4-3:12543 ] fire client(/172.16.16.115:1918) comming! at:/172.16.16.112:9001
+2016-05-24 10:45:44  [ DEBUG ] - [ nioEventLoopGroup-4-3:12544 ] randomCode:2l510bi9
+2016-05-24 10:47:03  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:47:03  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:47:07  [ DEBUG ] - [ nioEventLoopGroup-4-1:3982 ] fire client(/172.16.16.115:2020) comming! at:/172.16.16.112:9001
+2016-05-24 10:47:07  [ DEBUG ] - [ nioEventLoopGroup-4-1:3983 ] randomCode:k4l23lrc
+2016-05-24 10:47:07  [ ERROR ] - [ nioEventLoopGroup-4-1:4033 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 10:47:10  [ ERROR ] - [ nioEventLoopGroup-4-1:6983 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 10:47:13  [ ERROR ] - [ nioEventLoopGroup-4-1:9983 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 10:54:00  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:54:00  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:54:02  [ DEBUG ] - [ nioEventLoopGroup-5-1:2494 ] fire client(/172.16.16.115:2531) comming! at:/172.16.16.112:9001
+2016-05-24 10:54:02  [ DEBUG ] - [ nioEventLoopGroup-5-1:2496 ] randomCode:uo08wwjg
+2016-05-24 10:58:40  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 10:58:40  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:58:42  [ DEBUG ] - [ nioEventLoopGroup-5-1:2703 ] fire client(/172.16.16.115:2881) comming! at:/172.16.16.112:9001
+2016-05-24 10:58:42  [ DEBUG ] - [ nioEventLoopGroup-5-1:2705 ] randomCode:r8o92zia
+2016-05-24 10:59:56  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 10:59:56  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 11:02:44  [ DEBUG ] - [ nioEventLoopGroup-5-1:167793 ] fire client(/172.16.16.115:3175) comming! at:/172.16.16.112:9001
+2016-05-24 11:02:44  [ DEBUG ] - [ nioEventLoopGroup-5-1:167795 ] randomCode:o41b35wa
+2016-05-24 11:03:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:232803 ] /172.16.16.115:3175          fire client exit!
+2016-05-24 11:03:50  [ DEBUG ] - [ nioEventLoopGroup-5-2:233290 ] fire client(/172.16.16.115:3260) comming! at:/172.16.16.112:9001
+2016-05-24 11:03:50  [ DEBUG ] - [ nioEventLoopGroup-5-2:233290 ] randomCode:mhhxbb8u
+2016-05-24 11:05:17  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 11:05:17  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 11:05:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:3821 ] fire client(/172.16.16.115:3373) comming! at:/172.16.16.112:9001
+2016-05-24 11:05:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:3822 ] randomCode:14101n22
+2016-05-24 11:05:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:3844 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>14101n22</randomCode></eMonitor_XML>
+2016-05-24 11:05:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:3845 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>14101n22</randomCode></eMonitor_XML>
+2016-05-24 11:05:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:6823 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>14101n22</randomCode></eMonitor_XML>
+2016-05-24 11:05:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:6823 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>14101n22</randomCode></eMonitor_XML>
+2016-05-24 11:05:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:9823 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>14101n22</randomCode></eMonitor_XML>
+2016-05-24 11:05:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:9823 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>14101n22</randomCode></eMonitor_XML>
+2016-05-24 11:32:16  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 11:32:16  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 11:32:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:3948 ] fire client(/172.16.16.115:1391) comming! at:/172.16.16.112:9001
+2016-05-24 11:32:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:3949 ] randomCode:yf5730wo
+2016-05-24 11:32:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:3971 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yf5730wo</randomCode></eMonitor_XML>
+2016-05-24 11:32:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:3972 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yf5730wo</randomCode></eMonitor_XML>
+2016-05-24 11:32:23  [ DEBUG ] - [ nioEventLoopGroup-5-1:6951 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yf5730wo</randomCode></eMonitor_XML>
+2016-05-24 11:32:23  [ DEBUG ] - [ nioEventLoopGroup-5-1:6951 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yf5730wo</randomCode></eMonitor_XML>
+2016-05-24 11:32:26  [ DEBUG ] - [ nioEventLoopGroup-5-1:9950 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yf5730wo</randomCode></eMonitor_XML>
+2016-05-24 11:32:26  [ DEBUG ] - [ nioEventLoopGroup-5-1:9951 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yf5730wo</randomCode></eMonitor_XML>
+2016-05-24 11:34:18  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 11:34:18  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 11:34:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:2997 ] fire client(/172.16.16.115:1539) comming! at:/172.16.16.112:9001
+2016-05-24 11:34:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:2998 ] randomCode:3o1qihe5
+2016-05-24 11:34:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:3021 ] [B@1ae0436
+2016-05-24 11:34:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5999 ] [B@1479784
+2016-05-24 11:34:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:9000 ] [B@12c9015
+2016-05-24 11:35:24  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 11:35:24  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 11:35:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:3087 ] fire client(/172.16.16.115:1622) comming! at:/172.16.16.112:9001
+2016-05-24 11:35:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:3088 ] randomCode:9sg8kvew
+2016-05-24 11:35:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:3112 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>9sg8kvew</randomCode></eMonitor_XML>
+2016-05-24 11:35:30  [ DEBUG ] - [ nioEventLoopGroup-4-1:6089 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>9sg8kvew</randomCode></eMonitor_XML>
+2016-05-24 11:35:33  [ DEBUG ] - [ nioEventLoopGroup-4-1:9089 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>9sg8kvew</randomCode></eMonitor_XML>
+2016-05-24 11:36:21  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 11:36:21  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 11:36:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:5952 ] fire client(/172.16.16.115:1694) comming! at:/172.16.16.112:9001
+2016-05-24 11:36:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:5954 ] randomCode:ewxzgpv7
+2016-05-24 11:36:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:5976 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ewxzgpv7</randomCode></eMonitor_XML>
+2016-05-24 11:36:28  [ DEBUG ] - [ nioEventLoopGroup-4-2:7756 ] fire client(/172.16.16.115:1696) comming! at:/172.16.16.112:9001
+2016-05-24 11:36:28  [ DEBUG ] - [ nioEventLoopGroup-4-2:7757 ] randomCode:n86bw25q
+2016-05-24 11:36:28  [ DEBUG ] - [ nioEventLoopGroup-4-2:7758 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>n86bw25q</randomCode></eMonitor_XML>
+2016-05-24 11:36:32  [ DEBUG ] - [ nioEventLoopGroup-4-1:10955 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ewxzgpv7</randomCode></eMonitor_XML>
+2016-05-24 11:36:33  [ DEBUG ] - [ nioEventLoopGroup-4-2:12758 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>n86bw25q</randomCode></eMonitor_XML>
+2016-05-24 11:36:37  [ DEBUG ] - [ nioEventLoopGroup-4-1:15955 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ewxzgpv7</randomCode></eMonitor_XML>
+2016-05-24 11:36:38  [ DEBUG ] - [ nioEventLoopGroup-4-2:17757 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>n86bw25q</randomCode></eMonitor_XML>
+2016-05-24 11:36:40  [ DEBUG ] - [ nioEventLoopGroup-4-2:19501 ] /172.16.16.115:1696          fire client exit!
+2016-05-24 11:36:43  [ DEBUG ] - [ nioEventLoopGroup-4-1:22107 ] /172.16.16.115:1694          fire client exit!
+2016-05-24 11:36:44  [ DEBUG ] - [ nioEventLoopGroup-4-3:23497 ] fire client(/172.16.16.115:1720) comming! at:/172.16.16.112:9001
+2016-05-24 11:36:44  [ DEBUG ] - [ nioEventLoopGroup-4-3:23498 ] randomCode:yz8z9qom
+2016-05-24 11:36:44  [ DEBUG ] - [ nioEventLoopGroup-4-3:23499 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yz8z9qom</randomCode></eMonitor_XML>
+2016-05-24 11:36:45  [ DEBUG ] - [ nioEventLoopGroup-4-4:24435 ] fire client(/172.16.16.115:1722) comming! at:/172.16.16.112:9001
+2016-05-24 11:36:45  [ DEBUG ] - [ nioEventLoopGroup-4-4:24436 ] randomCode:zyz6cq8a
+2016-05-24 11:36:45  [ DEBUG ] - [ nioEventLoopGroup-4-4:24436 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>zyz6cq8a</randomCode></eMonitor_XML>
+2016-05-24 11:36:49  [ DEBUG ] - [ nioEventLoopGroup-4-3:28500 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yz8z9qom</randomCode></eMonitor_XML>
+2016-05-24 11:36:50  [ DEBUG ] - [ nioEventLoopGroup-4-4:29436 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>zyz6cq8a</randomCode></eMonitor_XML>
+2016-05-24 11:36:54  [ DEBUG ] - [ nioEventLoopGroup-4-3:33500 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>yz8z9qom</randomCode></eMonitor_XML>
+2016-05-24 11:36:55  [ DEBUG ] - [ nioEventLoopGroup-4-4:34436 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>zyz6cq8a</randomCode></eMonitor_XML>
+2016-05-24 14:02:37  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:02:37  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:02:42  [ DEBUG ] - [ nioEventLoopGroup-4-1:4743 ] fire client(/172.16.16.115:4517) comming! at:/172.16.16.112:9001
+2016-05-24 14:02:43  [ DEBUG ] - [ nioEventLoopGroup-4-1:5091 ] 是否在黑名单中：null
+2016-05-24 14:02:43  [ DEBUG ] - [ nioEventLoopGroup-4-1:5093 ] randomCode:q2npdwc2
+2016-05-24 14:02:43  [ DEBUG ] - [ nioEventLoopGroup-4-1:5171 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>q2npdwc2</randomCode></eMonitor_XML>
+2016-05-24 14:02:48  [ DEBUG ] - [ nioEventLoopGroup-4-1:10094 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>q2npdwc2</randomCode></eMonitor_XML>
+2016-05-24 14:02:53  [ DEBUG ] - [ nioEventLoopGroup-4-1:15094 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>q2npdwc2</randomCode></eMonitor_XML>
+2016-05-24 14:04:45  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:04:45  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:04:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3024 ] fire client(/172.16.16.115:4677) comming! at:/172.16.16.112:9001
+2016-05-24 14:04:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3092 ] 是否在黑名单中：/172.16.16.115:4677
+2016-05-24 14:04:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3093 ] randomCode:x17pr6v1
+2016-05-24 14:04:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3116 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>x17pr6v1</randomCode></eMonitor_XML>
+2016-05-24 14:04:53  [ DEBUG ] - [ nioEventLoopGroup-5-1:8093 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>x17pr6v1</randomCode></eMonitor_XML>
+2016-05-24 14:04:58  [ DEBUG ] - [ nioEventLoopGroup-5-1:13093 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>x17pr6v1</randomCode></eMonitor_XML>
+2016-05-24 14:05:03  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:05:03  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:05:06  [ DEBUG ] - [ nioEventLoopGroup-5-1:3900 ] fire client(/172.16.16.115:4699) comming! at:/172.16.16.112:9001
+2016-05-24 14:05:07  [ DEBUG ] - [ nioEventLoopGroup-5-1:4030 ] 是否在黑名单中：null
+2016-05-24 14:05:07  [ DEBUG ] - [ nioEventLoopGroup-5-1:4031 ] randomCode:3fve2aga
+2016-05-24 14:05:07  [ DEBUG ] - [ nioEventLoopGroup-5-1:4081 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>3fve2aga</randomCode></eMonitor_XML>
+2016-05-24 14:05:12  [ DEBUG ] - [ nioEventLoopGroup-5-1:9032 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>3fve2aga</randomCode></eMonitor_XML>
+2016-05-24 14:05:17  [ DEBUG ] - [ nioEventLoopGroup-5-1:14031 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>3fve2aga</randomCode></eMonitor_XML>
+2016-05-24 14:09:20  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:09:20  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:09:25  [ DEBUG ] - [ nioEventLoopGroup-5-1:4831 ] fire client(/172.16.16.115:1048) comming! at:/172.16.16.112:9001
+2016-05-24 14:09:25  [ DEBUG ] - [ nioEventLoopGroup-5-1:4924 ] /172.16.16.115:1048          fire client exit!
+2016-05-24 14:11:43  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:11:43  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:11:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:5178 ] fire client(/172.16.16.115:1226) comming! at:/172.16.16.112:9001
+2016-05-24 14:11:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:5265 ] randomCode:u6caxio9
+2016-05-24 14:11:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:5287 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>u6caxio9</randomCode></eMonitor_XML>
+2016-05-24 14:11:53  [ DEBUG ] - [ nioEventLoopGroup-5-1:10266 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>u6caxio9</randomCode></eMonitor_XML>
+2016-05-24 14:11:58  [ DEBUG ] - [ nioEventLoopGroup-5-1:15265 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>u6caxio9</randomCode></eMonitor_XML>
+2016-05-24 14:12:07  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:12:07  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:12:12  [ DEBUG ] - [ nioEventLoopGroup-5-1:4428 ] fire client(/172.16.16.115:1255) comming! at:/172.16.16.112:9001
+2016-05-24 14:12:12  [ DEBUG ] - [ nioEventLoopGroup-5-1:4496 ] /172.16.16.115:1255          fire client exit!
+2016-05-24 14:28:31  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:28:31  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:28:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:2531 ] fire client(/172.16.16.115:2462) comming! at:/172.16.16.112:9001
+2016-05-24 14:28:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:2598 ] randomCode:e93glnu3
+2016-05-24 14:28:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:2620 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>e93glnu3</randomCode></eMonitor_XML>
+2016-05-24 14:28:39  [ DEBUG ] - [ nioEventLoopGroup-4-1:7598 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>e93glnu3</randomCode></eMonitor_XML>
+2016-05-24 14:28:44  [ DEBUG ] - [ nioEventLoopGroup-4-1:12599 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>e93glnu3</randomCode></eMonitor_XML>
+2016-05-24 14:36:25  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:36:35  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:36:35  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:36:47  [ DEBUG ] - [ nioEventLoopGroup-5-1:12249 ] fire client(/172.16.16.115:3068) comming! at:/172.16.16.112:9001
+2016-05-24 14:36:47  [ DEBUG ] - [ nioEventLoopGroup-5-1:12314 ] randomCode:vghldfwt
+2016-05-24 14:36:47  [ DEBUG ] - [ nioEventLoopGroup-5-1:12336 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>vghldfwt</randomCode></eMonitor_XML>
+2016-05-24 14:36:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:13460 ] flag:HYVD
+2016-05-24 14:36:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:13460 ] Version:1
+2016-05-24 14:36:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:13461 ] Index:16777216
+2016-05-24 14:36:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:13504 ] java.lang.OutOfMemoryError: Java heap space
+2016-05-24 14:36:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:13504 ] /172.16.16.115:3068          fire client exit!
+2016-05-24 14:36:52  [ DEBUG ] - [ nioEventLoopGroup-5-1:17315 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>vghldfwt</randomCode></eMonitor_XML>
+2016-05-24 14:36:57  [ DEBUG ] - [ nioEventLoopGroup-5-1:22315 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>vghldfwt</randomCode></eMonitor_XML>
+2016-05-24 14:40:09  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:40:09  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:40:15  [ DEBUG ] - [ nioEventLoopGroup-5-1:5586 ] fire client(/172.16.16.115:3321) comming! at:/172.16.16.112:9001
+2016-05-24 14:40:15  [ DEBUG ] - [ nioEventLoopGroup-5-1:5656 ] randomCode:3kml5xpc
+2016-05-24 14:40:15  [ DEBUG ] - [ nioEventLoopGroup-5-1:5679 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>3kml5xpc</randomCode></eMonitor_XML>
+2016-05-24 14:40:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:10658 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>3kml5xpc</randomCode></eMonitor_XML>
+2016-05-24 14:40:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:11158 ] flag:HYVD
+2016-05-24 14:40:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:11159 ] Version:1
+2016-05-24 14:40:20  [ DEBUG ] - [ nioEventLoopGroup-5-1:11159 ] Index:16777216
+2016-05-24 14:40:21  [ ERROR ] - [ nioEventLoopGroup-5-1:11205 ] java.lang.OutOfMemoryError: Java heap space
+2016-05-24 14:40:21  [ DEBUG ] - [ nioEventLoopGroup-5-1:11207 ] /172.16.16.115:3321          fire client exit!
+2016-05-24 14:40:25  [ DEBUG ] - [ nioEventLoopGroup-5-1:15658 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>3kml5xpc</randomCode></eMonitor_XML>
+2016-05-24 14:40:48  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:40:48  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:40:51  [ DEBUG ] - [ nioEventLoopGroup-4-1:3069 ] fire client(/172.16.16.115:3368) comming! at:/172.16.16.112:9001
+2016-05-24 14:40:51  [ DEBUG ] - [ nioEventLoopGroup-4-1:3150 ] randomCode:iwwo25ff
+2016-05-24 14:40:51  [ DEBUG ] - [ nioEventLoopGroup-4-1:3173 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>iwwo25ff</randomCode></eMonitor_XML>
+2016-05-24 14:40:56  [ DEBUG ] - [ nioEventLoopGroup-4-1:8152 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>iwwo25ff</randomCode></eMonitor_XML>
+2016-05-24 14:40:57  [ DEBUG ] - [ nioEventLoopGroup-4-1:8612 ] flag:HYVD
+2016-05-24 14:40:57  [ DEBUG ] - [ nioEventLoopGroup-4-1:8612 ] Version:1
+2016-05-24 14:40:57  [ DEBUG ] - [ nioEventLoopGroup-4-1:8613 ] Index:16777216
+2016-05-24 14:41:01  [ DEBUG ] - [ nioEventLoopGroup-4-1:13151 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>iwwo25ff</randomCode></eMonitor_XML>
+2016-05-24 14:41:18  [ DEBUG ] - [ nioEventLoopGroup-4-1:29554 ] /172.16.16.115:3368          fire client exit!
+2016-05-24 14:41:19  [ DEBUG ] - [ nioEventLoopGroup-4-2:30444 ] fire client(/172.16.16.115:3403) comming! at:/172.16.16.112:9001
+2016-05-24 14:41:19  [ DEBUG ] - [ nioEventLoopGroup-4-2:30448 ] randomCode:zrns6y07
+2016-05-24 14:41:19  [ DEBUG ] - [ nioEventLoopGroup-4-2:30448 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>zrns6y07</randomCode></eMonitor_XML>
+2016-05-24 14:41:20  [ DEBUG ] - [ nioEventLoopGroup-4-2:31993 ] flag:HYVD
+2016-05-24 14:41:20  [ DEBUG ] - [ nioEventLoopGroup-4-2:31993 ] Version:1
+2016-05-24 14:41:20  [ DEBUG ] - [ nioEventLoopGroup-4-2:31995 ] Index:16777216
+2016-05-24 14:41:22  [ DEBUG ] - [ nioEventLoopGroup-4-2:33417 ] flag:HYVD
+2016-05-24 14:41:22  [ DEBUG ] - [ nioEventLoopGroup-4-2:33417 ] Version:1
+2016-05-24 14:41:22  [ DEBUG ] - [ nioEventLoopGroup-4-2:33417 ] Index:16777216
+2016-05-24 14:41:22  [ DEBUG ] - [ nioEventLoopGroup-4-2:34217 ] flag:HYVD
+2016-05-24 14:41:22  [ DEBUG ] - [ nioEventLoopGroup-4-2:34217 ] Version:1
+2016-05-24 14:41:22  [ DEBUG ] - [ nioEventLoopGroup-4-2:34218 ] Index:16777216
+2016-05-24 14:41:24  [ DEBUG ] - [ nioEventLoopGroup-4-2:35448 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>zrns6y07</randomCode></eMonitor_XML>
+2016-05-24 14:41:29  [ DEBUG ] - [ nioEventLoopGroup-4-2:40448 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>zrns6y07</randomCode></eMonitor_XML>
+2016-05-24 14:42:12  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:42:12  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:42:15  [ DEBUG ] - [ nioEventLoopGroup-4-1:3312 ] fire client(/172.16.16.115:3475) comming! at:/172.16.16.112:9001
+2016-05-24 14:42:15  [ DEBUG ] - [ nioEventLoopGroup-4-1:3381 ] randomCode:ex2txdqo
+2016-05-24 14:42:15  [ DEBUG ] - [ nioEventLoopGroup-4-1:3404 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ex2txdqo</randomCode></eMonitor_XML>
+2016-05-24 14:42:16  [ DEBUG ] - [ nioEventLoopGroup-4-1:4236 ] flag:HYVD
+2016-05-24 14:42:16  [ DEBUG ] - [ nioEventLoopGroup-4-1:4237 ] Version:1
+2016-05-24 14:42:16  [ DEBUG ] - [ nioEventLoopGroup-4-1:4238 ] Index:16777216
+2016-05-24 14:42:16  [ ERROR ] - [ nioEventLoopGroup-4-1:4283 ] java.lang.OutOfMemoryError: Java heap space
+2016-05-24 14:42:16  [ DEBUG ] - [ nioEventLoopGroup-4-1:4283 ] /172.16.16.115:3475          fire client exit!
+2016-05-24 14:42:20  [ DEBUG ] - [ nioEventLoopGroup-4-1:8382 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ex2txdqo</randomCode></eMonitor_XML>
+2016-05-24 14:42:25  [ DEBUG ] - [ nioEventLoopGroup-4-1:13382 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ex2txdqo</randomCode></eMonitor_XML>
+2016-05-24 14:43:18  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:43:18  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:43:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:2453 ] fire client(/172.16.16.115:3554) comming! at:/172.16.16.112:9001
+2016-05-24 14:43:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:2524 ] randomCode:0627ezgn
+2016-05-24 14:43:21  [ DEBUG ] - [ nioEventLoopGroup-4-1:2546 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>0627ezgn</randomCode></eMonitor_XML>
+2016-05-24 14:43:22  [ DEBUG ] - [ nioEventLoopGroup-4-1:3353 ] flag:HYVD
+2016-05-24 14:43:22  [ DEBUG ] - [ nioEventLoopGroup-4-1:3354 ] Version:1
+2016-05-24 14:43:22  [ DEBUG ] - [ nioEventLoopGroup-4-1:3354 ] Index:16777216
+2016-05-24 14:43:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5415 ] flag:HYVD
+2016-05-24 14:43:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5415 ] Version:1
+2016-05-24 14:43:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5416 ] Index:16777216
+2016-05-24 14:43:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5791 ] flag:HYVD
+2016-05-24 14:43:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5791 ] Version:1
+2016-05-24 14:43:24  [ DEBUG ] - [ nioEventLoopGroup-4-1:5792 ] Index:16777216
+2016-05-24 14:43:25  [ DEBUG ] - [ nioEventLoopGroup-4-1:6128 ] flag:HYVD
+2016-05-24 14:43:25  [ DEBUG ] - [ nioEventLoopGroup-4-1:6128 ] Version:1
+2016-05-24 14:43:25  [ DEBUG ] - [ nioEventLoopGroup-4-1:6130 ] Index:16777216
+2016-05-24 14:43:26  [ DEBUG ] - [ nioEventLoopGroup-4-1:7524 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>0627ezgn</randomCode></eMonitor_XML>
+2016-05-24 14:43:31  [ DEBUG ] - [ nioEventLoopGroup-4-1:12524 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>0627ezgn</randomCode></eMonitor_XML>
+2016-05-24 14:44:22  [ DEBUG ] - [ nioEventLoopGroup-4-1:63911 ] /172.16.16.115:3554          fire client exit!
+2016-05-24 14:44:27  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:44:27  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:44:29  [ DEBUG ] - [ nioEventLoopGroup-5-1:2498 ] fire client(/172.16.16.115:3639) comming! at:/172.16.16.112:9001
+2016-05-24 14:44:29  [ DEBUG ] - [ nioEventLoopGroup-5-1:2567 ] randomCode:8mlfhs2h
+2016-05-24 14:44:29  [ DEBUG ] - [ nioEventLoopGroup-5-1:2589 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>8mlfhs2h</randomCode></eMonitor_XML>
+2016-05-24 14:44:34  [ DEBUG ] - [ nioEventLoopGroup-5-1:7567 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>8mlfhs2h</randomCode></eMonitor_XML>
+2016-05-24 14:44:35  [ DEBUG ] - [ nioEventLoopGroup-5-1:8166 ] flag:HYVD
+2016-05-24 14:44:35  [ DEBUG ] - [ nioEventLoopGroup-5-1:8166 ] Version:1
+2016-05-24 14:44:35  [ DEBUG ] - [ nioEventLoopGroup-5-1:8167 ] Index:16777216
+2016-05-24 14:44:35  [ DEBUG ] - [ nioEventLoopGroup-5-1:8167 ] Body:<?xml version="1.0" encoding="UTF-8"?><eMonitor_XML><username>admin</username><password>123456789</password></eMonitor_XML>              
+2016-05-24 14:44:39  [ DEBUG ] - [ nioEventLoopGroup-5-1:12567 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>8mlfhs2h</randomCode></eMonitor_XML>
+2016-05-24 14:47:45  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:47:45  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:47:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3278 ] fire client(/172.16.16.115:3883) comming! at:/172.16.16.112:9001
+2016-05-24 14:47:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3344 ] randomCode:w2dnqokm
+2016-05-24 14:47:48  [ DEBUG ] - [ nioEventLoopGroup-5-1:3366 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>w2dnqokm</randomCode></eMonitor_XML>
+2016-05-24 14:47:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:4097 ] flag:HYVD
+2016-05-24 14:47:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:4098 ] Version:1
+2016-05-24 14:47:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:4098 ] Index:16777216
+2016-05-24 14:47:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:4099 ] Body:<?xml version="1.0" encoding="UTF-8"?><eMonitor_XML><username>admin</username><password>123456789</password></eMonitor_XML>              
+2016-05-24 14:47:57  [ DEBUG ] - [ nioEventLoopGroup-5-1:11944 ] /172.16.16.115:3883          fire client exit!
+2016-05-24 14:48:18  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:48:18  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:48:22  [ DEBUG ] - [ nioEventLoopGroup-4-1:3655 ] fire client(/172.16.16.115:3923) comming! at:/172.16.16.112:9001
+2016-05-24 14:48:22  [ DEBUG ] - [ nioEventLoopGroup-4-1:3722 ] /172.16.16.115:3923          fire client exit!
+2016-05-24 14:58:40  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 14:58:40  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 14:58:45  [ DEBUG ] - [ nioEventLoopGroup-4-1:5081 ] fire client(/172.16.16.115:4692) comming! at:/172.16.16.112:9001
+2016-05-24 14:58:45  [ DEBUG ] - [ nioEventLoopGroup-4-1:5183 ] /172.16.16.115:4692          fire client exit!
+2016-05-24 15:01:36  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 15:01:36  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 15:01:42  [ DEBUG ] - [ nioEventLoopGroup-5-1:5809 ] fire client(/172.16.16.115:4907) comming! at:/172.16.16.112:9001
+2016-05-24 15:01:42  [ DEBUG ] - [ nioEventLoopGroup-5-1:5953 ] /172.16.16.115:4907          fire client exit!
+2016-05-24 15:21:55  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 15:21:55  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 15:21:59  [ DEBUG ] - [ nioEventLoopGroup-5-1:4849 ] fire client(/172.16.16.115:2429) comming! at:/172.16.16.112:9001
+2016-05-24 15:22:00  [ DEBUG ] - [ nioEventLoopGroup-5-1:4917 ] randomCode:g5186f0d
+2016-05-24 15:22:00  [ DEBUG ] - [ nioEventLoopGroup-5-1:4939 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>g5186f0d</randomCode></eMonitor_XML>
+2016-05-24 15:22:05  [ DEBUG ] - [ nioEventLoopGroup-5-1:9918 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>g5186f0d</randomCode></eMonitor_XML>
+2016-05-24 15:22:10  [ DEBUG ] - [ nioEventLoopGroup-5-1:14918 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>g5186f0d</randomCode></eMonitor_XML>
+2016-05-24 15:22:15  [ DEBUG ] - [ nioEventLoopGroup-5-1:19920 ] /172.16.16.115:2429          fire client exit!
+2016-05-24 15:23:28  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 15:23:28  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 15:23:28  [ DEBUG ] - [ nioEventLoopGroup-4-1:358 ] fire client(/172.16.16.115:2540) comming! at:/172.16.16.112:9001
+2016-05-24 15:23:28  [ DEBUG ] - [ nioEventLoopGroup-4-1:430 ] randomCode:rm9bgfqg
+2016-05-24 15:23:28  [ DEBUG ] - [ nioEventLoopGroup-4-1:457 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>rm9bgfqg</randomCode></eMonitor_XML>
+2016-05-24 15:23:33  [ DEBUG ] - [ nioEventLoopGroup-4-1:5431 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>rm9bgfqg</randomCode></eMonitor_XML>
+2016-05-24 15:23:38  [ DEBUG ] - [ nioEventLoopGroup-4-1:10431 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>rm9bgfqg</randomCode></eMonitor_XML>
+2016-05-24 15:23:43  [ DEBUG ] - [ nioEventLoopGroup-4-1:15435 ] /172.16.16.115:2540          fire client exit!
+2016-05-24 15:23:47  [ DEBUG ] - [ nioEventLoopGroup-4-2:18762 ] fire client(/172.16.16.115:2564) comming! at:/172.16.16.112:9001
+2016-05-24 15:23:47  [ DEBUG ] - [ nioEventLoopGroup-4-2:18766 ] /172.16.16.115:2564          fire client exit!
+2016-05-24 15:24:38  [ DEBUG ] - [ nioEventLoopGroup-4-3:70045 ] fire client(/172.16.16.115:2631) comming! at:/172.16.16.112:9001
+2016-05-24 15:24:38  [ DEBUG ] - [ nioEventLoopGroup-4-3:70049 ] /172.16.16.115:2631          fire client exit!
+2016-05-24 15:25:49  [ DEBUG ] - [ nioEventLoopGroup-4-4:140772 ] fire client(/172.16.16.115:2722) comming! at:/172.16.16.112:9001
+2016-05-24 15:25:49  [ DEBUG ] - [ nioEventLoopGroup-4-4:140776 ] randomCode:mkpln8s6
+2016-05-24 15:25:49  [ DEBUG ] - [ nioEventLoopGroup-4-4:140776 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>mkpln8s6</randomCode></eMonitor_XML>
+2016-05-24 15:25:54  [ DEBUG ] - [ nioEventLoopGroup-4-4:145776 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>mkpln8s6</randomCode></eMonitor_XML>
+2016-05-24 15:25:59  [ DEBUG ] - [ nioEventLoopGroup-4-4:150776 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>mkpln8s6</randomCode></eMonitor_XML>
+2016-05-24 15:26:04  [ DEBUG ] - [ nioEventLoopGroup-4-4:155779 ] /172.16.16.115:2722          fire client exit!
+2016-05-24 15:26:15  [ DEBUG ] - [ nioEventLoopGroup-4-5:166859 ] fire client(/172.16.16.115:2754) comming! at:/172.16.16.112:9001
+2016-05-24 15:26:15  [ DEBUG ] - [ nioEventLoopGroup-4-5:166863 ] /172.16.16.115:2754          fire client exit!
+2016-05-24 15:54:51  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 15:54:51  [ DEBUG ] - [ Thread-1:1 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 17:26:50  [ DEBUG ] - [ Thread-1:1 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 17:26:50  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 17:27:28  [ DEBUG ] - [ nioEventLoopGroup-4-1:37499 ] fire client(/172.16.16.115:3724) comming! at:/172.16.16.112:9001
+2016-05-24 17:27:28  [ DEBUG ] - [ nioEventLoopGroup-4-1:37807 ] randomCode:witwed7g
+2016-05-24 17:27:28  [ DEBUG ] - [ nioEventLoopGroup-4-1:37830 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>witwed7g</randomCode></eMonitor_XML>
+2016-05-24 17:27:33  [ DEBUG ] - [ nioEventLoopGroup-4-1:42807 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>witwed7g</randomCode></eMonitor_XML>
+2016-05-24 17:27:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:43652 ] flag:HYVD
+2016-05-24 17:27:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:43653 ] Version:1
+2016-05-24 17:27:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:43676 ] Index:16777216
+2016-05-24 17:27:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:43677 ] Body:<?xml version="1.0" encoding="UTF-8"?><eMonitor_XML><username>admin</username><password>123456789</password></eMonitor_XML>              
+2016-05-24 17:27:34  [ DEBUG ] - [ nioEventLoopGroup-4-1:43683 ] /172.16.16.115:3724          fire client exit!
+2016-05-24 17:30:06  [ DEBUG ] - [ nioEventLoopGroup-4-2:195949 ] fire client(/172.16.16.115:3918) comming! at:/172.16.16.112:9001
+2016-05-24 17:30:06  [ DEBUG ] - [ nioEventLoopGroup-4-2:195954 ] randomCode:ady3zmn3
+2016-05-24 17:30:06  [ DEBUG ] - [ nioEventLoopGroup-4-2:195955 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ady3zmn3</randomCode></eMonitor_XML>
+2016-05-24 17:30:11  [ DEBUG ] - [ nioEventLoopGroup-4-2:200954 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ady3zmn3</randomCode></eMonitor_XML>
+2016-05-24 17:30:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:201729 ] flag:HYVD
+2016-05-24 17:30:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:201731 ] Version:1
+2016-05-24 17:30:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:201731 ] Index:16777216
+2016-05-24 17:30:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:201731 ] Body:<?xml version="1.0" encoding="UTF-8"?><eMonitor_XML><username>admin</username><password>123456789</password></eMonitor_XML>              
+2016-05-24 17:30:12  [ ERROR ] - [ nioEventLoopGroup-4-2:201803 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 17:30:16  [ DEBUG ] - [ nioEventLoopGroup-4-2:205955 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>ady3zmn3</randomCode></eMonitor_XML>
+2016-05-24 17:30:21  [ DEBUG ] - [ nioEventLoopGroup-4-2:210959 ] /172.16.16.115:3918          fire client exit!
+2016-05-24 17:32:45  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-24 17:32:45  [ DEBUG ] - [ Thread-1:1 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-24 17:32:57  [ DEBUG ] - [ nioEventLoopGroup-5-1:11613 ] fire client(/172.16.16.115:4129) comming! at:/172.16.16.112:9001
+2016-05-24 17:32:57  [ DEBUG ] - [ nioEventLoopGroup-5-1:11679 ] randomCode:z9aey305
+2016-05-24 17:32:57  [ DEBUG ] - [ nioEventLoopGroup-5-1:11719 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>z9aey305</randomCode></eMonitor_XML>
+2016-05-24 17:33:02  [ DEBUG ] - [ nioEventLoopGroup-5-1:16679 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>z9aey305</randomCode></eMonitor_XML>
+2016-05-24 17:33:03  [ DEBUG ] - [ nioEventLoopGroup-5-1:17074 ] flag:HYVD
+2016-05-24 17:33:03  [ DEBUG ] - [ nioEventLoopGroup-5-1:17075 ] Version:1
+2016-05-24 17:33:03  [ DEBUG ] - [ nioEventLoopGroup-5-1:17076 ] Index:16777216
+2016-05-24 17:33:03  [ DEBUG ] - [ nioEventLoopGroup-5-1:17076 ] Body:<?xml version="1.0" encoding="UTF-8"?><eMonitor_XML><username>admin</username><password>123456789</password></eMonitor_XML>              
+2016-05-24 17:33:03  [ ERROR ] - [ nioEventLoopGroup-5-1:17077 ] java.lang.ClassCastException: java.lang.String cannot be cast to [B
+2016-05-24 17:33:07  [ DEBUG ] - [ nioEventLoopGroup-5-1:21679 ] <?xml version="1.0" encoding="UTF-8"?>
+<eMonitor_XML EventType="loginchange"><randomCode>z9aey305</randomCode></eMonitor_XML>
+2016-05-24 17:33:12  [ DEBUG ] - [ nioEventLoopGroup-5-1:26685 ] /172.16.16.115:4129          fire client exit!

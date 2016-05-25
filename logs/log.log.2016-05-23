@@ -1,0 +1,151 @@
+2016-05-23 13:35:54  [ ERROR ] - [ Thread-0:0 ] java.net.BindException: Address already in use: bind
+2016-05-23 13:36:11  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:40:04  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 13:40:04  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:41:57  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:41:57  [ DEBUG ] - [ Thread-1:1 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 13:42:10  [ DEBUG ] - [ nioEventLoopGroup-4-1:12768 ] fire client(/172.16.16.115:3357) comming! at:/172.16.16.112:9001
+2016-05-23 13:42:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:14779 ] fire client(/172.16.16.115:3361) comming! at:/172.16.16.112:9001
+2016-05-23 13:42:32  [ DEBUG ] - [ nioEventLoopGroup-5-1:34696 ] /172.16.16.115:3452
+2016-05-23 13:42:32  [ DEBUG ] - [ nioEventLoopGroup-5-1:34696 ]  url:/favicon.ico
+2016-05-23 13:42:32  [ ERROR ] - [ nioEventLoopGroup-5-1:34697 ] java.lang.ArrayIndexOutOfBoundsException: 1
+2016-05-23 13:42:36  [ DEBUG ] - [ nioEventLoopGroup-5-3:38136 ] /172.16.16.115:3474
+2016-05-23 13:42:36  [ DEBUG ] - [ nioEventLoopGroup-5-3:38137 ]  url:/test?id=0
+2016-05-23 13:42:36  [ DEBUG ] - [ nioEventLoopGroup-5-3:38137 ] url deviceid:0
+2016-05-23 13:42:36  [ DEBUG ] - [ nioEventLoopGroup-4-1:38140 ] cmd index:0
+2016-05-23 13:42:41  [ DEBUG ] - [ nioEventLoopGroup-5-4:43308 ] /172.16.16.115:3502
+2016-05-23 13:42:41  [ DEBUG ] - [ nioEventLoopGroup-5-4:43309 ]  url:/test?id=0
+2016-05-23 13:42:41  [ DEBUG ] - [ nioEventLoopGroup-5-4:43309 ] url deviceid:0
+2016-05-23 13:42:41  [ DEBUG ] - [ nioEventLoopGroup-4-1:43310 ] cmd index:1
+2016-05-23 13:42:47  [ DEBUG ] - [ nioEventLoopGroup-5-5:49770 ] /172.16.16.115:3550
+2016-05-23 13:42:47  [ DEBUG ] - [ nioEventLoopGroup-5-5:49772 ]  url:/test?id=1
+2016-05-23 13:42:47  [ DEBUG ] - [ nioEventLoopGroup-5-5:49772 ] url deviceid:1
+2016-05-23 13:42:47  [ DEBUG ] - [ nioEventLoopGroup-4-2:49773 ] cmd index:2
+2016-05-23 13:42:50  [ DEBUG ] - [ nioEventLoopGroup-5-6:52633 ] /172.16.16.115:3560
+2016-05-23 13:42:50  [ DEBUG ] - [ nioEventLoopGroup-5-6:52634 ]  url:/test?id=1
+2016-05-23 13:42:50  [ DEBUG ] - [ nioEventLoopGroup-5-6:52634 ] url deviceid:1
+2016-05-23 13:42:50  [ DEBUG ] - [ nioEventLoopGroup-4-2:52634 ] cmd index:3
+2016-05-23 13:48:00  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:48:00  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 13:48:21  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:48:21  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 13:48:26  [ DEBUG ] - [ nioEventLoopGroup-4-1:5210 ] fire client(/172.16.16.115:4036) comming! at:/172.16.16.112:9001
+2016-05-23 13:48:27  [ DEBUG ] - [ nioEventLoopGroup-4-2:6391 ] fire client(/172.16.16.115:4039) comming! at:/172.16.16.112:9001
+2016-05-23 13:48:40  [ DEBUG ] - [ nioEventLoopGroup-5-1:18480 ] /172.16.16.115:4124
+2016-05-23 13:48:40  [ DEBUG ] - [ nioEventLoopGroup-5-1:18481 ]  url:/favicon.ico
+2016-05-23 13:48:40  [ DEBUG ] - [ nioEventLoopGroup-5-1:18481 ] error url!
+2016-05-23 13:48:41  [ DEBUG ] - [ nioEventLoopGroup-5-3:19847 ] /172.16.16.115:4146
+2016-05-23 13:48:41  [ DEBUG ] - [ nioEventLoopGroup-5-3:19848 ]  url:/test?id=0
+2016-05-23 13:48:41  [ DEBUG ] - [ nioEventLoopGroup-5-3:19848 ] url deviceid:0
+2016-05-23 13:48:41  [ DEBUG ] - [ nioEventLoopGroup-4-1:19851 ] cmd index:0
+2016-05-23 13:48:45  [ DEBUG ] - [ nioEventLoopGroup-5-4:23785 ] /172.16.16.115:4185
+2016-05-23 13:48:45  [ DEBUG ] - [ nioEventLoopGroup-5-4:23786 ]  url:/test?id=0
+2016-05-23 13:48:45  [ DEBUG ] - [ nioEventLoopGroup-5-4:23786 ] url deviceid:0
+2016-05-23 13:48:45  [ DEBUG ] - [ nioEventLoopGroup-4-1:23787 ] cmd index:1
+2016-05-23 13:48:50  [ DEBUG ] - [ nioEventLoopGroup-5-5:28727 ] /172.16.16.115:4197
+2016-05-23 13:48:50  [ DEBUG ] - [ nioEventLoopGroup-5-5:28729 ]  url:/test?id=1
+2016-05-23 13:48:50  [ DEBUG ] - [ nioEventLoopGroup-5-5:28729 ] url deviceid:1
+2016-05-23 13:48:50  [ DEBUG ] - [ nioEventLoopGroup-4-2:28730 ] cmd index:2
+2016-05-23 13:48:52  [ DEBUG ] - [ nioEventLoopGroup-5-6:31063 ] /172.16.16.115:4202
+2016-05-23 13:48:52  [ DEBUG ] - [ nioEventLoopGroup-5-6:31064 ]  url:/test?id=1
+2016-05-23 13:48:52  [ DEBUG ] - [ nioEventLoopGroup-5-6:31064 ] url deviceid:1
+2016-05-23 13:48:52  [ DEBUG ] - [ nioEventLoopGroup-4-2:31065 ] cmd index:3
+2016-05-23 13:53:25  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 13:53:25  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:53:41  [ DEBUG ] - [ nioEventLoopGroup-4-1:16199 ] fire client(/172.16.16.115:4614) comming! at:/172.16.16.112:9001
+2016-05-23 13:53:44  [ DEBUG ] - [ nioEventLoopGroup-4-2:18640 ] fire client(/172.16.16.115:4618) comming! at:/172.16.16.112:9001
+2016-05-23 13:53:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:24158 ] /172.16.16.115:4698
+2016-05-23 13:53:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:24158 ]  url:/favicon.ico
+2016-05-23 13:53:49  [ DEBUG ] - [ nioEventLoopGroup-5-1:24158 ] error url!
+2016-05-23 13:53:52  [ DEBUG ] - [ nioEventLoopGroup-5-3:26938 ] /172.16.16.115:4707
+2016-05-23 13:53:52  [ DEBUG ] - [ nioEventLoopGroup-5-3:26939 ]  url:/test?id=0
+2016-05-23 13:53:52  [ DEBUG ] - [ nioEventLoopGroup-5-3:26939 ] url deviceid:0
+2016-05-23 13:53:57  [ DEBUG ] - [ nioEventLoopGroup-5-4:31978 ] /172.16.16.115:4721
+2016-05-23 13:53:57  [ DEBUG ] - [ nioEventLoopGroup-5-4:31978 ]  url:/test?id=0
+2016-05-23 13:53:57  [ DEBUG ] - [ nioEventLoopGroup-5-4:31979 ] url deviceid:0
+2016-05-23 13:54:02  [ DEBUG ] - [ nioEventLoopGroup-5-5:36718 ] /172.16.16.115:4732
+2016-05-23 13:54:02  [ DEBUG ] - [ nioEventLoopGroup-5-5:36719 ]  url:/test?id=1
+2016-05-23 13:54:02  [ DEBUG ] - [ nioEventLoopGroup-5-5:36719 ] url deviceid:1
+2016-05-23 13:54:06  [ DEBUG ] - [ nioEventLoopGroup-5-6:40736 ] /172.16.16.115:4741
+2016-05-23 13:54:06  [ DEBUG ] - [ nioEventLoopGroup-5-6:40736 ]  url:/test?id=1
+2016-05-23 13:54:06  [ DEBUG ] - [ nioEventLoopGroup-5-6:40736 ] url deviceid:1
+2016-05-23 13:54:09  [ DEBUG ] - [ nioEventLoopGroup-4-1:44066 ] web socket size:4
+2016-05-23 13:54:09  [ DEBUG ] - [ nioEventLoopGroup-4-1:44074 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:54:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:47136 ] web socket size:4
+2016-05-23 13:54:12  [ DEBUG ] - [ nioEventLoopGroup-4-2:47137 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:55:03  [ DEBUG ] - [ nioEventLoopGroup-4-2:98152 ] web socket size:4
+2016-05-23 13:55:03  [ DEBUG ] - [ nioEventLoopGroup-4-2:98153 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:55:13  [ DEBUG ] - [ nioEventLoopGroup-4-2:107675 ] web socket size:4
+2016-05-23 13:55:13  [ DEBUG ] - [ nioEventLoopGroup-4-2:107676 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:55:13  [ DEBUG ] - [ nioEventLoopGroup-4-2:108577 ] web socket size:4
+2016-05-23 13:55:13  [ DEBUG ] - [ nioEventLoopGroup-4-2:108578 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:56:41  [ DEBUG ] - [ nioEventLoopGroup-4-2:196264 ] web socket size:4
+2016-05-23 13:56:41  [ DEBUG ] - [ nioEventLoopGroup-4-2:196264 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:58:23  [ DEBUG ] - [ Thread-0:0 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 13:58:23  [ DEBUG ] - [ Thread-1:0 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 13:58:27  [ DEBUG ] - [ nioEventLoopGroup-4-1:4259 ] fire client(/172.16.16.115:1151) comming! at:/172.16.16.112:9001
+2016-05-23 13:58:28  [ DEBUG ] - [ nioEventLoopGroup-4-2:5257 ] fire client(/172.16.16.115:1153) comming! at:/172.16.16.112:9001
+2016-05-23 13:58:44  [ DEBUG ] - [ nioEventLoopGroup-5-1:20660 ] /172.16.16.115:1246
+2016-05-23 13:58:44  [ DEBUG ] - [ nioEventLoopGroup-5-1:20660 ]  url:/favicon.ico
+2016-05-23 13:58:44  [ DEBUG ] - [ nioEventLoopGroup-5-1:20661 ] error url!
+2016-05-23 13:58:44  [ DEBUG ] - [ nioEventLoopGroup-5-3:21147 ] /172.16.16.115:1251
+2016-05-23 13:58:44  [ DEBUG ] - [ nioEventLoopGroup-5-3:21148 ]  url:/test?id=0
+2016-05-23 13:58:44  [ DEBUG ] - [ nioEventLoopGroup-5-3:21148 ] url deviceid:0
+2016-05-23 13:58:46  [ DEBUG ] - [ nioEventLoopGroup-5-4:23116 ] /172.16.16.115:1260
+2016-05-23 13:58:46  [ DEBUG ] - [ nioEventLoopGroup-5-4:23117 ]  url:/test?id=0
+2016-05-23 13:58:46  [ DEBUG ] - [ nioEventLoopGroup-5-4:23117 ] url deviceid:0
+2016-05-23 13:58:49  [ DEBUG ] - [ nioEventLoopGroup-5-5:25797 ] /172.16.16.115:1268
+2016-05-23 13:58:49  [ DEBUG ] - [ nioEventLoopGroup-5-5:25797 ]  url:/test?id=1
+2016-05-23 13:58:49  [ DEBUG ] - [ nioEventLoopGroup-5-5:25798 ] url deviceid:1
+2016-05-23 13:58:52  [ DEBUG ] - [ nioEventLoopGroup-5-6:28953 ] /172.16.16.115:1274
+2016-05-23 13:58:52  [ DEBUG ] - [ nioEventLoopGroup-5-6:28953 ]  url:/test?id=1
+2016-05-23 13:58:52  [ DEBUG ] - [ nioEventLoopGroup-5-6:28953 ] url deviceid:1
+2016-05-23 13:58:54  [ DEBUG ] - [ nioEventLoopGroup-4-1:31580 ] web socket size:4
+2016-05-23 13:58:54  [ DEBUG ] - [ nioEventLoopGroup-4-1:31581 ] channel is active:true
+2016-05-23 13:58:54  [ DEBUG ] - [ nioEventLoopGroup-4-1:31589 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:58:59  [ DEBUG ] - [ nioEventLoopGroup-4-2:36267 ] web socket size:4
+2016-05-23 13:58:59  [ DEBUG ] - [ nioEventLoopGroup-4-2:36267 ] channel is active:true
+2016-05-23 13:58:59  [ DEBUG ] - [ nioEventLoopGroup-4-2:36268 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 13:59:41  [ DEBUG ] - [ nioEventLoopGroup-4-2:77955 ] web socket size:4
+2016-05-23 13:59:41  [ DEBUG ] - [ nioEventLoopGroup-4-2:77955 ] channel is active:false
+2016-05-23 13:59:41  [ ERROR ] - [ nioEventLoopGroup-4-2:77956 ] channel already closed!
+2016-05-23 14:02:26  [ DEBUG ] - [ Thread-1:1 ] FireServerSigAgent starts successfully！begin to listen at:9001
+2016-05-23 14:02:26  [ DEBUG ] - [ Thread-0:1 ] WebServerSigAgent starts successfully！begin to listen at:8080
+2016-05-23 14:02:30  [ DEBUG ] - [ nioEventLoopGroup-4-1:3855 ] fire client(/172.16.16.115:1599) comming! at:/172.16.16.112:9001
+2016-05-23 14:02:31  [ DEBUG ] - [ nioEventLoopGroup-4-2:5592 ] fire client(/172.16.16.115:1601) comming! at:/172.16.16.112:9001
+2016-05-23 14:02:45  [ DEBUG ] - [ nioEventLoopGroup-5-1:19040 ] /172.16.16.115:1679
+2016-05-23 14:02:45  [ DEBUG ] - [ nioEventLoopGroup-5-1:19041 ]  url:/favicon.ico
+2016-05-23 14:02:45  [ DEBUG ] - [ nioEventLoopGroup-5-1:19041 ] error url!
+2016-05-23 14:02:45  [ DEBUG ] - [ nioEventLoopGroup-5-3:19694 ] /172.16.16.115:1685
+2016-05-23 14:02:45  [ DEBUG ] - [ nioEventLoopGroup-5-3:19695 ]  url:/test?id=0
+2016-05-23 14:02:45  [ DEBUG ] - [ nioEventLoopGroup-5-3:19695 ] url deviceid:0
+2016-05-23 14:02:47  [ DEBUG ] - [ nioEventLoopGroup-5-4:21616 ] /172.16.16.115:1695
+2016-05-23 14:02:47  [ DEBUG ] - [ nioEventLoopGroup-5-4:21617 ]  url:/test?id=0
+2016-05-23 14:02:47  [ DEBUG ] - [ nioEventLoopGroup-5-4:21617 ] url deviceid:0
+2016-05-23 14:02:50  [ DEBUG ] - [ nioEventLoopGroup-5-5:24747 ] /172.16.16.115:1732
+2016-05-23 14:02:50  [ DEBUG ] - [ nioEventLoopGroup-5-5:24747 ]  url:/test?id=1
+2016-05-23 14:02:50  [ DEBUG ] - [ nioEventLoopGroup-5-5:24747 ] url deviceid:1
+2016-05-23 14:02:54  [ DEBUG ] - [ nioEventLoopGroup-5-6:27867 ] /172.16.16.115:1747
+2016-05-23 14:02:54  [ DEBUG ] - [ nioEventLoopGroup-5-6:27868 ]  url:/test?id=1
+2016-05-23 14:02:54  [ DEBUG ] - [ nioEventLoopGroup-5-6:27868 ] url deviceid:1
+2016-05-23 14:02:57  [ DEBUG ] - [ nioEventLoopGroup-4-1:31203 ] web socket size:4
+2016-05-23 14:02:57  [ DEBUG ] - [ nioEventLoopGroup-4-1:31203 ] channel is active:true
+2016-05-23 14:02:57  [ DEBUG ] - [ nioEventLoopGroup-4-1:31211 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 14:03:09  [ DEBUG ] - [ nioEventLoopGroup-4-2:43656 ] web socket size:3
+2016-05-23 14:03:09  [ DEBUG ] - [ nioEventLoopGroup-4-2:43657 ] channel is active:true
+2016-05-23 14:03:09  [ DEBUG ] - [ nioEventLoopGroup-4-2:43657 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 14:03:38  [ DEBUG ] - [ nioEventLoopGroup-5-7:72019 ] /172.16.16.115:1808
+2016-05-23 14:03:38  [ DEBUG ] - [ nioEventLoopGroup-5-7:72020 ]  url:/test?id=1
+2016-05-23 14:03:38  [ DEBUG ] - [ nioEventLoopGroup-5-7:72020 ] url deviceid:1
+2016-05-23 14:04:36  [ DEBUG ] - [ nioEventLoopGroup-4-2:130009 ] web socket size:3
+2016-05-23 14:04:36  [ DEBUG ] - [ nioEventLoopGroup-4-2:130010 ] channel is active:true
+2016-05-23 14:04:36  [ DEBUG ] - [ nioEventLoopGroup-4-2:130010 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 14:04:36  [ DEBUG ] - [ nioEventLoopGroup-5-8:130044 ] /172.16.16.115:1887
+2016-05-23 14:04:36  [ DEBUG ] - [ nioEventLoopGroup-5-8:130044 ]  url:/favicon.ico
+2016-05-23 14:04:36  [ DEBUG ] - [ nioEventLoopGroup-5-8:130045 ] error url!
+2016-05-23 14:05:30  [ DEBUG ] - [ nioEventLoopGroup-4-2:184624 ] web socket size:2
+2016-05-23 14:05:30  [ DEBUG ] - [ nioEventLoopGroup-4-2:184624 ] channel is active:true
+2016-05-23 14:05:30  [ DEBUG ] - [ nioEventLoopGroup-4-2:184625 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
+2016-05-23 14:05:47  [ DEBUG ] - [ nioEventLoopGroup-4-1:201551 ] web socket size:1
+2016-05-23 14:05:47  [ DEBUG ] - [ nioEventLoopGroup-4-1:201552 ] channel is active:true
+2016-05-23 14:05:47  [ DEBUG ] - [ nioEventLoopGroup-4-1:201552 ] success_jsonpCallback({"loginname":"zhangfan","sign_date":"2007-06-12","email":"10371443@qq.com","password":"userpass"})
