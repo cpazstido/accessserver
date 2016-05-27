@@ -52,7 +52,8 @@ public class WebServerHandler extends
             int index = getCMDIndex();
             webClients.put(""+index, ctx);
             ChannelHandlerContext chc = (ChannelHandlerContext) FireServerHandler.fireClients.get(strs[1]);
-            chc.writeAndFlush(""+index);
+            if(chc != null)
+                chc.writeAndFlush(""+index);
         }catch (Exception e){
             logger.error(e);
         }
