@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static io.netty.handler.codec.http.HttpHeaders.Names.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -39,25 +40,24 @@ public class WebServerHandler extends
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) {
-        try {
-            logger.debug(ctx.channel().remoteAddress());
-            final String uri = request.getUri();
-            logger.debug(" url:" + uri);
-            if(!uri.contains("=")){
-                logger.debug("error url!");
-                return ;
-            }
-            String[] strs = uri.split("\\=");
-            logger.debug("url deviceid:"+strs[1]);
-            int index = getCMDIndex();
-            webClients.put(""+index, ctx);
-            ChannelHandlerContext chc = (ChannelHandlerContext) FireServerHandler.fireClients.get(strs[1]);
-            if(chc != null)
-                chc.writeAndFlush(""+index);
-        }catch (Exception e){
-            logger.error(e);
-        }
-        //sendListing(ctx);
+//        try {
+//            final String uri = request.getUri();
+//            //logger.debug(ctx.channel().remoteAddress()+" url:" + uri);
+//            if(!uri.contains("=")){
+//                logger.debug("error url!");
+//                return ;
+//            }
+//            String[] strs = uri.split("\\=");
+//            //logger.debug("url deviceid:"+strs[1]);
+//            int index = getCMDIndex();
+//            webClients.put(""+index, ctx);
+//            ChannelHandlerContext chc = (ChannelHandlerContext) FireServerHandler.fireClients.get(strs[1]);
+//            if(chc != null)
+//                chc.writeAndFlush(""+index);
+//        }catch (Exception e){
+//            logger.error(e);
+//        }
+        sendListing(ctx);
     }
 
     private static void sendError(ChannelHandlerContext ctx,
@@ -72,6 +72,7 @@ public class WebServerHandler extends
     private static void sendListing(final ChannelHandlerContext ctx) {
         FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
         response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
+        response.headers().set(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
         StringBuilder buf = new StringBuilder();
         JSONObject json=new JSONObject();
         JSONObject member1 = new JSONObject();
@@ -79,14 +80,13 @@ public class WebServerHandler extends
         member1.put("password", "userpass");
         member1.put("email","10371443@qq.com");
         member1.put("sign_date", "2007-06-12");
-        buf.append("success_jsonpCallback(");
+        //buf.append("success_jsonpCallback(");
         buf.append(member1.toString());
-        buf.append(")");
+        //buf.append(")");
         ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
         response.content().writeBytes(buffer,buf.toString().getBytes().length);
         System.out.println(buf.toString());
         buffer.release();
         ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
     }
-
 }

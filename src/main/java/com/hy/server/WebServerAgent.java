@@ -2,6 +2,7 @@ package com.hy.server;
 
 import com.hy.handler.WebServerHandler;
 import com.hy.handler.WebServerTimeoutHandler;
+import com.hy.utils.PropertyUtils;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -44,7 +45,7 @@ public class WebServerAgent extends ServerAgent{
                             ch.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65536));
                             ch.pipeline().addLast("http-encoder", new HttpResponseEncoder());
                             ch.pipeline().addLast("http-chunked", new ChunkedWriteHandler());
-                            ch.pipeline().addLast("timeoutHandler",new WebServerTimeoutHandler(5));
+                            ch.pipeline().addLast("timeoutHandler",new WebServerTimeoutHandler(Integer.parseInt(PropertyUtils.getValue("WebServerTimeout"))));
                             ch.pipeline().addLast("webServerHandler", new WebServerHandler(""));
                         }
                     });
