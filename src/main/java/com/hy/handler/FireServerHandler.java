@@ -46,7 +46,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
     public String deviceId;
     public ChannelHandlerContext channelHandlerContext;
     public String randomCode;
-    public volatile ScheduledFuture<?> loginChangeSchedule;
+    public volatile ScheduledFuture<?> loginChallengeSchedule;
     public volatile ScheduledFuture<?> heartBeatSchedule;
     public volatile int loginChangeTimes;
     public volatile boolean loginSuccess;
@@ -63,14 +63,16 @@ public class FireServerHandler extends ChannelHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         try {
             NettyMessage message = (NettyMessage) msg;
+            FireDataResolver fireDataResolver;
             if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.LOGIN_Resp.value()) {
                 //处理登录信息
+                logger.debug("收到("+ctx.channel().remoteAddress()+")登录数据报："+ (String) message.getBody());
                 if (loginSuccess) {
                     //重复登录，不处理，直接扔掉
                     logger.debug(ctx.channel().remoteAddress() + " 重复登录！");
                     return;
                 }
-                FireDataResolver fireDataResolver = new FireDataResolver();
+                fireDataResolver = new FireDataResolver();
                 fireDataResolver.LoginDataResolver(this, message);
                 if (loginSuccess) {
                     //登录成功，发心跳
@@ -87,21 +89,24 @@ public class FireServerHandler extends ChannelHandlerAdapter {
                 Jedis jedis = RedisUtil.getJedis();
                 jedis.set(ip, ip);
                 jedis.expire(ip, Integer.parseInt(PropertyUtils.getValue("BlacklistTimeout")));
-                loginChangeSchedule.cancel(true);
-                FireDataResolver fireDataResolver = new FireDataResolver();
+                loginChallengeSchedule.cancel(true);
+                fireDataResolver = new FireDataResolver();
+                logger.debug(ctx.channel().remoteAddress()+" didn't login,go into the blacklist!");
                 ctx.writeAndFlush(fireDataResolver.buildInfoResp("didn't login,go into the blacklist!")).addListener(ChannelFutureListener.CLOSE);
             } else if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.HEARTBEAT_Resp.value()) {
                 //处理心跳
+                logger.debug("收到("+ctx.channel().remoteAddress()+") 心跳数据报！");
                 synchronized (this) {
                     LoseHeartbeatTimes = 0;
 //                    logger.debug(ctx.channel().remoteAddress()+" LoseHeartbeatTimes--:"+LoseHeartbeatTimes);
                 }
             } else {
                 //处理命令
+                fireDataResolver = new FireDataResolver();
             }
         } catch (Exception e) {
             heartBeatSchedule.cancel(true);
-            loginChangeSchedule.cancel(true);
+            loginChallengeSchedule.cancel(true);
             logger.error(e);
             ctx.close();
         }
@@ -119,7 +124,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
             boolean exist = jedis.exists(ip);
             //判断新加入的设备是否在黑名单中
             if (!exist) {
-                loginChangeSchedule = ctx.executor().scheduleAtFixedRate(new LoginChallengeTask(this, RandomCode.genRandomNum(8)), 0, Integer.parseInt(PropertyUtils.getValue("LoginChallengeInterval")) * 1000, TimeUnit.MILLISECONDS);
+                loginChallengeSchedule = ctx.executor().scheduleAtFixedRate(new LoginChallengeTask(this, RandomCode.genRandomNum(8)), 0, Integer.parseInt(PropertyUtils.getValue("LoginChallengeInterval")) * 1000, TimeUnit.MILLISECONDS);
             } else {
                 FireDataResolver fireDataResolver = new FireDataResolver();
                 ctx.writeAndFlush(fireDataResolver.buildInfoResp("already in blacklist,please login later!")).addListener(ChannelFutureListener.CLOSE);
@@ -127,7 +132,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
         } catch (Exception e) {
             logger.error(e);
             heartBeatSchedule.cancel(true);
-            loginChangeSchedule.cancel(true);
+            loginChallengeSchedule.cancel(true);
         }
     }
 
@@ -135,7 +140,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         logger.debug(ctx.channel().remoteAddress() + "          fire client exit!");
         heartBeatSchedule.cancel(true);
-        loginChangeSchedule.cancel(true);
+        loginChallengeSchedule.cancel(true);
     }
 
     @Override
@@ -144,7 +149,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
         ctx.close();
         logger.error(cause);
         heartBeatSchedule.cancel(true);
-        loginChangeSchedule.cancel(true);
+        loginChallengeSchedule.cancel(true);
     }
 
     private static void sendListing(final ChannelHandlerContext ctx, final int index) {

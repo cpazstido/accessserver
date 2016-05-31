@@ -29,7 +29,7 @@ public class WebServerHandler extends
     private final String url;
     private static int cmdIndex = 0;
     public static ConcurrentHashMap webClients = new ConcurrentHashMap();
-    private static Logger logger=Logger.getLogger("WebServerHandler");
+    private static Logger logger = Logger.getLogger(WebServerHandler.class);
     public synchronized static int getCMDIndex(){
         return cmdIndex++;
     }
@@ -39,7 +39,7 @@ public class WebServerHandler extends
     }
 
     @Override
-    public void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) {
+    public void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) throws InterruptedException {
 //        try {
 //            final String uri = request.getUri();
 //            //logger.debug(ctx.channel().remoteAddress()+" url:" + uri);
@@ -57,7 +57,8 @@ public class WebServerHandler extends
 //        }catch (Exception e){
 //            logger.error(e);
 //        }
-        sendListing(ctx);
+        //sendListing(ctx);
+        Thread.sleep(6000);
     }
 
     private static void sendError(ChannelHandlerContext ctx,
@@ -76,6 +77,7 @@ public class WebServerHandler extends
         StringBuilder buf = new StringBuilder();
         JSONObject json=new JSONObject();
         JSONObject member1 = new JSONObject();
+        member1.put("info","success");
         member1.put("loginname", "zhangfan");
         member1.put("password", "userpass");
         member1.put("email","10371443@qq.com");

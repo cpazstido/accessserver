@@ -33,19 +33,19 @@ public class LoginChallengeTask implements Runnable {
 
     public void run() {
         try {
-            if (fireServerHandler.loginChangeTimes > (Integer.parseInt(PropertyUtils.getValue("LoginChallengeTimes"))-1) && fireServerHandler.loginChangeSchedule != null) {
-                fireServerHandler.loginChangeSchedule.cancel(true);
-                fireServerHandler.loginChangeSchedule = null;
+            if (fireServerHandler.loginChangeTimes > (Integer.parseInt(PropertyUtils.getValue("LoginChallengeTimes"))-1) && fireServerHandler.loginChallengeSchedule != null) {
+                fireServerHandler.loginChallengeSchedule.cancel(true);
+                fireServerHandler.loginChallengeSchedule = null;
                 FireDataResolver fireDataResolver = new FireDataResolver();
                 Jedis jedis = RedisUtil.getJedis();
                 jedis.set(fireServerHandler.ip,fireServerHandler.ip);
                 jedis.expire(fireServerHandler.ip, Integer.parseInt(PropertyUtils.getValue("BlacklistTimeout")));
                 fireServerHandler.channelHandlerContext.writeAndFlush(fireDataResolver.buildInfoResp("3 times did't response,already in blacklist,please login later!")).addListener(ChannelFutureListener.CLOSE);
             } else {
-                NettyMessage loginChange = buildLoginChange();
+                NettyMessage loginChallenge = buildLoginChange();
                 fireServerHandler.loginChangeTimes++;
 //                logger.debug(new String((byte [])loginChange.getBody()));
-                fireServerHandler.channelHandlerContext.writeAndFlush(loginChange);
+                fireServerHandler.channelHandlerContext.writeAndFlush(loginChallenge);
             }
         } catch (Exception e) {
             logger.error(e);
@@ -69,8 +69,8 @@ public class LoginChallengeTask implements Runnable {
     public String writeXml() {
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("eMonitor_XML");
-        root.addAttribute("EventType","loginchange");
-        Element eRandomCode = root.addElement("randomCode");
+        root.addAttribute("EventType","LoginChallenge");
+        Element eRandomCode = root.addElement("RandomCode");
         eRandomCode.setText(randomCode);
         return document.asXML();
     }

@@ -35,7 +35,7 @@ public class HeartBeatTask implements Runnable {
                 NettyMessage hearbeatMessage = buildHearbeatMessage();
                 fireServerHandler.channelHandlerContext.writeAndFlush(hearbeatMessage);
             } else {
-                logger.error("lost hear beat " + Integer.parseInt(PropertyUtils.getValue("LoseHeartbeatTimes")) + "times,close the socket!");
+                logger.error("lost heart beat " + Integer.parseInt(PropertyUtils.getValue("LoseHeartbeatTimes")) + "times,close the socket!");
                 fireServerHandler.fireClients.remove(fireServerHandler.deviceId);
                 fireServerHandler.channelHandlerContext.close();
                 fireServerHandler.heartBeatSchedule.cancel(true);

@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import static io.netty.handler.codec.http.HttpHeaders.Names.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -137,18 +138,20 @@ public class WebServerTimeoutHandler extends ChannelHandlerAdapter {
     private static void sendListing(final ChannelHandlerContext ctx) {
         FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
         //response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
-        response.headers().set(CONTENT_TYPE, "text/plain; charset=UTF-8");
+        response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
+        response.headers().set(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
         StringBuilder buf = new StringBuilder();
         JSONObject json=new JSONObject();
         JSONObject member1 = new JSONObject();
-        member1.put("loginname", "zhangfan");
-        member1.put("password", "userpass");
-        member1.put("email","10371443@qq.com");
-        member1.put("sign_date", "2007-06-12");
+//        member1.put("loginname", "zhangfan");
+//        member1.put("password", "userpass");
+//        member1.put("email","10371443@qq.com");
+//        member1.put("sign_date", "2007-06-12");
+        member1.put("info","timeout!");
 //        buf.append("success_jsonpCallback(");
-//        buf.append(member1.toString());
+       buf.append(member1.toString());
 //        buf.append(")");
-        buf.append("timeout!!!!!!!");
+        //buf.append("timeout!!!!!!!");
         ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
         response.content().writeBytes(buffer,buf.toString().getBytes().length);
         logger.debug(buf.toString());

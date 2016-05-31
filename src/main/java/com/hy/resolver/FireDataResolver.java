@@ -28,39 +28,39 @@ public class FireDataResolver {
      * @param message
      */
     public void LoginDataResolver(FireServerHandler fsh, NettyMessage message){
-        String deviceID="",key="";
+        String deviceID="",randomCode="";
         try {
             String body = (String) message.getBody();
-            logger.debug("开始解析:"+ body);
+            //logger.debug("开始解析:"+ body);
             Document doc = null;
             doc = DocumentHelper.parseText(body); // 将字符串转为XML
             Element rootElt = doc.getRootElement(); // 获取根节点
             String EventType = rootElt.attributeValue("EventType");// 拿到根节点的属性
-            if(EventType != null &&EventType.equals("loginchange")){
-                Element eDeviceID=rootElt.element("deviceid");
+            if(EventType != null &&EventType.equals("LoginChallenge")){
+                Element eDeviceID=rootElt.element("DeviceId");
                 deviceID = eDeviceID.getText();
                 logger.debug("deviceID:"+deviceID);
-                Element eKey=rootElt.element("key");
-                key=eKey.getText();
-                logger.debug("key:"+key);
-                logger.debug("解析:"+ body+" 完毕！");
+                Element eKey=rootElt.element("RandomCode");
+                randomCode=eKey.getText();
+                logger.debug("randomCode:"+randomCode);
+                //logger.debug("解析:"+ body+" 完毕！");
             }else{
                 logger.error("xml不符合规范！");
             }
         } catch (Exception e) {
             logger.error(e);
-            fsh.loginChangeSchedule.cancel(true);
+            fsh.loginChallengeSchedule.cancel(true);
             return ;
         }
 
         //对key进行相关验证，验证成功则将设备加入fireClient,失败则踢掉
-        if(validateKey(fsh.randomCode, key)){
+        if(validateKey(fsh.randomCode, randomCode)){
             //成功
             fsh.loginSuccess = true;
             fsh.channelHandlerContext.writeAndFlush(buildLoginInfoResp("login success!"));
             fsh.deviceId = deviceID;
             fsh.fireClients.put(deviceID,fsh.channelHandlerContext);
-            fsh.loginChangeSchedule.cancel(true);
+            fsh.loginChallengeSchedule.cancel(true);
             logger.debug(fsh.channelHandlerContext.channel().remoteAddress()+" 登录成功！");
         }else{
             //失败
@@ -69,7 +69,7 @@ public class FireDataResolver {
             Jedis jedis = RedisUtil.getJedis();
             jedis.set(fsh.ip,fsh.ip);
             jedis.expire(fsh.ip,Integer.parseInt(PropertyUtils.getValue("BlacklistTimeout")));
-            fsh.loginChangeSchedule.cancel(true);
+            fsh.loginChallengeSchedule.cancel(true);
         }
         fsh.loginSuccess = true;
     }
@@ -109,8 +109,8 @@ public class FireDataResolver {
     public String writeXmlForLoginInfoResp(String info) {
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("eMonitor_XML");
-        root.addAttribute("EventType","loginchange");
-        Element eRandomCode = root.addElement("info");
+        root.addAttribute("EventType","LoginChallenge");
+        Element eRandomCode = root.addElement("Info");
         eRandomCode.setText(info);
         return document.asXML();
     }
@@ -118,9 +118,10 @@ public class FireDataResolver {
     public String writeXmlForInfoResp(String info) {
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("eMonitor_XML");
-        root.addAttribute("EventType","info");
-        Element eRandomCode = root.addElement("info");
+        root.addAttribute("EventType","Info");
+        Element eRandomCode = root.addElement("Info");
         eRandomCode.setText(info);
         return document.asXML();
     }
+
 }
