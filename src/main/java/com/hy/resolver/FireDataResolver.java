@@ -1,5 +1,6 @@
 package com.hy.resolver;
 
+import com.hy.bean.DeviceInfo;
 import com.hy.bean.Header;
 import com.hy.bean.MessageTypeReq;
 import com.hy.bean.NettyMessage;
@@ -8,6 +9,7 @@ import com.hy.utils.PropertyUtils;
 import com.hy.utils.RedisUtil;
 import io.netty.channel.ChannelFutureListener;
 import org.apache.log4j.Logger;
+import org.apache.log4j.pattern.IntegerPatternConverter;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
@@ -28,7 +30,8 @@ public class FireDataResolver {
      * @param message
      */
     public void LoginDataResolver(FireServerHandler fsh, NettyMessage message){
-        String deviceID="",randomCode="";
+        String deviceID="",randomCode="",ipcNum="",softwareVersion="",data="";
+        DeviceInfo deviceInfo = new DeviceInfo();
         try {
             String body = (String) message.getBody();
             //logger.debug("开始解析:"+ body);
@@ -39,6 +42,18 @@ public class FireDataResolver {
             if(EventType != null &&EventType.equals("LoginChallenge")){
                 Element eDeviceID=rootElt.element("DeviceId");
                 deviceID = eDeviceID.getText();
+                deviceInfo.setDeviceId(deviceID);
+                Element eIpcNum = rootElt.element("IPCNum");
+                ipcNum = eIpcNum.getText();
+                deviceInfo.setIpcNum(Integer.parseInt(ipcNum));
+                Element eSoftwareVersion = rootElt.element("SoftwareVersion");
+                softwareVersion = eSoftwareVersion.getText();
+                deviceInfo.setSoftwareVersion(Float.parseFloat(softwareVersion));
+                Element eData = rootElt.element("Data");
+                data = eData.getText();
+                deviceInfo.setData(data.getBytes());
+                deviceInfo.setDeviceId(deviceID);
+                deviceInfo.setFsh(fsh);
                 logger.debug("deviceID:"+deviceID);
                 Element eKey=rootElt.element("RandomCode");
                 randomCode=eKey.getText();
@@ -59,7 +74,7 @@ public class FireDataResolver {
             fsh.loginSuccess = true;
             fsh.channelHandlerContext.writeAndFlush(buildLoginInfoResp("login success!"));
             fsh.deviceId = deviceID;
-            fsh.fireClients.put(deviceID,fsh.channelHandlerContext);
+            fsh.fireClients.put(deviceID,deviceInfo);
             fsh.loginChallengeSchedule.cancel(true);
             logger.debug(fsh.channelHandlerContext.channel().remoteAddress()+" 登录成功！");
         }else{

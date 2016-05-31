@@ -1,5 +1,9 @@
 package com.hy.handler;
 
+import com.hy.bean.DeviceInfo;
+import com.hy.bean.Header;
+import com.hy.bean.MessageTypeReq;
+import com.hy.bean.NettyMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -40,25 +44,39 @@ public class WebServerHandler extends
 
     @Override
     public void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) throws InterruptedException {
-//        try {
-//            final String uri = request.getUri();
-//            //logger.debug(ctx.channel().remoteAddress()+" url:" + uri);
-//            if(!uri.contains("=")){
-//                logger.debug("error url!");
-//                return ;
-//            }
-//            String[] strs = uri.split("\\=");
-//            //logger.debug("url deviceid:"+strs[1]);
-//            int index = getCMDIndex();
-//            webClients.put(""+index, ctx);
-//            ChannelHandlerContext chc = (ChannelHandlerContext) FireServerHandler.fireClients.get(strs[1]);
-//            if(chc != null)
-//                chc.writeAndFlush(""+index);
-//        }catch (Exception e){
-//            logger.error(e);
-//        }
+        try {
+            final String uri = request.getUri();
+            logger.debug(ctx.channel().remoteAddress()+" url:" + uri);
+            if(!uri.contains("=")){
+                logger.debug("error url!");
+                return ;
+            }
+            String[] strs = uri.split("\\=");
+            //logger.debug("url deviceid:"+strs[1]);
+            int index = getCMDIndex();
+            webClients.put(""+index, ctx);
+            DeviceInfo deviceInfo = (DeviceInfo) FireServerHandler.fireClients.get(strs[1]);
+            if(deviceInfo != null) {
+                NettyMessage nettyMessage = new NettyMessage();
+                String body = "asdf";
+                Header header = new Header();
+                header.setLen(body.length());
+                header.setFlag("HYVC".getBytes());
+                header.setIndex(0);
+                header.setVersion((byte) 1);
+                header.setTypes(MessageTypeReq.INFO.value());
+                nettyMessage.setHeader(header);
+                nettyMessage.setBody(body.getBytes());
+                nettyMessage.setHeader(header);
+                deviceInfo.getFsh().channelHandlerContext.writeAndFlush(nettyMessage);
+            }else{
+                logger.debug("nulllllllllllllllll");
+            }
+        }catch (Exception e){
+            logger.error(e);
+        }
         //sendListing(ctx);
-        Thread.sleep(6000);
+        //Thread.sleep(6000);
     }
 
     private static void sendError(ChannelHandlerContext ctx,

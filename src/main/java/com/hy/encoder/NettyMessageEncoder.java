@@ -25,7 +25,6 @@ public class NettyMessageEncoder extends MessageToByteEncoder<NettyMessage> {
             byteBuf.writeByte(nettyMessage.getHeader().getTypes());
             byteBuf.writeInt(nettyMessage.getHeader().getLen());
             if(nettyMessage == null || nettyMessage.getBody() == null){
-
             }
             else{
                 byteBuf.writeBytes((byte[]) nettyMessage.getBody());
