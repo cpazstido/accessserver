@@ -9,4 +9,17 @@ public class ByteHelper {
         for (int i=begin; i<begin+count; i++) bs[i-begin] = src[i];
         return bs;
     }
+
+    public static String byteToHexStr(byte[] b, int length)
+    {
+        String stmp="";
+        StringBuilder sb = new StringBuilder("");
+        for (int n=0;n<length;n++)
+        {
+            stmp = Integer.toHexString(b[n] & 0xFF);
+            sb.append((stmp.length()==1)? "0"+stmp : stmp);
+            //sb.append(" ");
+        }
+        return sb.toString().toUpperCase().trim();
+    }
 }

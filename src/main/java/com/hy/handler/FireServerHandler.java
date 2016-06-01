@@ -64,6 +64,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
         try {
             NettyMessage message = (NettyMessage) msg;
             FireDataResolver fireDataResolver;
+            logger.debug("type:"+message.getHeader().getTypes());
             if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.LOGIN_Resp.value()) {
                 //处理登录信息
                 logger.debug("收到("+ctx.channel().remoteAddress()+")登录数据报："+ (String) message.getBody());

@@ -3,6 +3,7 @@ package com.hy.decoder;
 import com.hy.bean.Header;
 import com.hy.bean.NettyMessage;
 import com.hy.utils.BigEndian;
+import com.hy.utils.ByteHelper;
 import com.hy.utils.LittleEndian;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -29,7 +30,7 @@ public class NettyMessageDecoder extends ByteArrayDecoder {
                 //Flag 4
                 byte[] bytesFlag = new byte[4];
                 in.readBytes(bytesFlag); // 读取4字节的flag
-//                logger.debug("flag:" + new String(bytesFlag));
+                //logger.debug("flag:" + new String(bytesFlag));
 
                 //Version 1
                 byte[] bytesVersion = new byte[1];
@@ -49,7 +50,7 @@ public class NettyMessageDecoder extends ByteArrayDecoder {
                 byte[] bytesLength = new byte[4];
                 in.readBytes(bytesLength);
                 int bodyLength = BigEndian.getBigEndianInt(bytesLength);
-//                logger.debug("length:" + bodyLength);
+                //logger.debug("length:" + bodyLength);
 
                 //System.out.println("Index:" + LittleEndian.getLittleEndianInt(bytesIndex));
                 //System.out.println("Type:" + (int)bytesType[0]);
@@ -82,6 +83,7 @@ public class NettyMessageDecoder extends ByteArrayDecoder {
                     message.setHeader(header);
                     message.setBody(body);
 //                    logger.debug("Body:"+body);
+                    logger.debug("收到消息："+ ByteHelper.byteToHexStr(dataBytes,14+bodyLength));
                     out.add(message); // 解析出一条消息
                 }
             }

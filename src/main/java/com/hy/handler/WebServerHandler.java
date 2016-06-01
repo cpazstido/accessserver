@@ -85,7 +85,7 @@ public class WebServerHandler extends
                 Header header = new Header();
                 header.setLen(body.length());
                 header.setFlag("HYVC".getBytes());
-                header.setIndex(0);
+                header.setIndex(index);
                 header.setVersion((byte) 1);
                 header.setTypes(MessageTypeReq.INFO.value());
                 nettyMessage.setHeader(header);
