@@ -26,6 +26,7 @@ public class MainServer {
                     }
                 }
             }.start();
+            Thread.sleep(500);
 
             //开启接收设备、传感器状态线程
             new Thread() {
@@ -40,6 +41,7 @@ public class MainServer {
                     }
                 }
             }.start();
+            Thread.sleep(500);
 
             //开启fire信令通道线程
             new Thread() {

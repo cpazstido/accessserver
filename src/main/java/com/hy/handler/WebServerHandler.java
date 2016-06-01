@@ -9,15 +9,15 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.DefaultFullHttpResponse;
-import io.netty.handler.codec.http.FullHttpRequest;
-import io.netty.handler.codec.http.FullHttpResponse;
-import io.netty.handler.codec.http.HttpResponseStatus;
+import io.netty.handler.codec.http.*;
+import io.netty.handler.codec.http.multipart.*;
 import io.netty.util.CharsetUtil;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.ACCESS_CONTROL_ALLOW_ORIGIN;
@@ -46,6 +46,29 @@ public class WebServerHandler extends
     public void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) throws InterruptedException {
         try {
             final String uri = request.getUri();
+            if (request.getMethod().equals(HttpMethod.POST)) {
+
+                HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(new DefaultHttpDataFactory(false), request);
+                try{
+                    List<InterfaceHttpData> postList = decoder.getBodyHttpDatas();
+                    // 读取从客户端传过来的参数
+                    for (InterfaceHttpData data : postList) {
+                        String name = data.getName();
+                        logger.info(data.toString());
+                        String value = null;
+                        if (InterfaceHttpData.HttpDataType.Attribute == data.getHttpDataType()) {
+                            MemoryAttribute attribute = (MemoryAttribute) data;
+                            attribute.setCharset(CharsetUtil.UTF_8);
+                            value = attribute.getValue();
+                            logger.info("name:"+name+",value:"+value);
+                        }
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+
             logger.debug(ctx.channel().remoteAddress()+" url:" + uri);
             if(!uri.contains("=")){
                 logger.debug("error url!");

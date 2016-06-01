@@ -88,7 +88,7 @@ public class WebServerTimeoutHandler extends ChannelHandlerAdapter {
         DefaultFullHttpRequest defaultFullHttpRequest = (DefaultFullHttpRequest)msg;
         String url = defaultFullHttpRequest.getUri();
         logger.debug(ctx.channel().remoteAddress()+"url:======="+defaultFullHttpRequest.getUri());
-        logger.debug("channelRead()========"+msg);
+        //logger.debug("channelRead()========"+msg);
         this.lastReadTime = System.currentTimeMillis();
 //        if(url.contains("test")){
 //            ctx.fireChannelRead(msg);
