@@ -28,7 +28,7 @@ public class LoginChallengeTask implements Runnable {
     public LoginChallengeTask(final FireServerHandler fireServerHandler, String randomCode) {
         this.fireServerHandler = fireServerHandler;
         this.randomCode = randomCode;
-        logger.debug("randomCode:" + randomCode);
+        //logger.debug("randomCode:" + randomCode);
     }
 
     public void run() {

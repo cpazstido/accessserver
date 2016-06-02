@@ -46,9 +46,9 @@ public class WebServerHandler extends
     @Override
     public void messageReceived(ChannelHandlerContext ctx, FullHttpRequest request) throws InterruptedException {
         try {
+            ctx.channel().eventLoop();
             final String uri = request.getUri();
             if (request.getMethod().equals(HttpMethod.POST)) {
-
                 HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(new DefaultHttpDataFactory(false), request);
                 try{
                     List<InterfaceHttpData> postList = decoder.getBodyHttpDatas();
@@ -68,7 +68,6 @@ public class WebServerHandler extends
                     e.printStackTrace();
                 }
             }
-
 
             logger.debug(ctx.channel().remoteAddress()+" url:" + uri);
             if(!uri.contains("=")){

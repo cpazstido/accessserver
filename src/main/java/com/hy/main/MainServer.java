@@ -14,7 +14,7 @@ public class MainServer {
     public static void main(String[] args) {
         try{
             //开启web信令通道线程
-            new Thread() {
+            new Thread("WebSig") {
                 @Override
                 public void run() {
                     try {
@@ -29,7 +29,7 @@ public class MainServer {
             Thread.sleep(500);
 
             //开启接收设备、传感器状态线程
-            new Thread() {
+            new Thread("StatusData") {
                 @Override
                 public void run() {
                     try {
@@ -44,7 +44,7 @@ public class MainServer {
             Thread.sleep(500);
 
             //开启fire信令通道线程
-            new Thread() {
+            new Thread("FireSig") {
                 @Override
                 public void run() {
                     try {

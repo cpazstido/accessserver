@@ -64,7 +64,28 @@ public class FireServerHandler extends ChannelHandlerAdapter {
         try {
             NettyMessage message = (NettyMessage) msg;
             FireDataResolver fireDataResolver;
-            logger.debug("type:"+message.getHeader().getTypes());
+            switch (message.getHeader().getTypes()){
+                case 0:
+                    logger.debug("收到type:0"+" 登录回应");
+                    break;
+                case 1:
+                    logger.debug("收到type:1"+" 心跳回应");
+                    break;
+                case 2:
+                    logger.debug("收到type:2"+" 命令收到，正在执行，结果将通过数据通道返回");
+                    break;
+                case 3:
+                    logger.debug("收到type:3"+" 命令收到，且执行完毕，数据为执行结果(xml格式)");
+                    break;
+                case 4:
+                    logger.debug("收到type:4"+" 命令收到，且执行完毕，数据为执行结果(字符串格式)");
+                    break;
+                case 5:
+                    logger.debug("收到type:5"+" 命令执行出错（数据为出错信息）");
+                    break;
+                default:
+                    logger.debug("收到未知回应"+"");
+            }
             if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.LOGIN_Resp.value()) {
                 //处理登录信息
                 logger.debug("收到("+ctx.channel().remoteAddress()+")登录数据报："+ (String) message.getBody());
@@ -96,7 +117,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
                 ctx.writeAndFlush(fireDataResolver.buildInfoResp("didn't login,go into the blacklist!")).addListener(ChannelFutureListener.CLOSE);
             } else if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.HEARTBEAT_Resp.value()) {
                 //处理心跳
-                logger.debug("收到("+ctx.channel().remoteAddress()+") 心跳数据报！");
+                logger.debug("收到("+ctx.channel().remoteAddress()+") 心跳回复数据报！");
                 synchronized (this) {
                     LoseHeartbeatTimes = 0;
 //                    logger.debug(ctx.channel().remoteAddress()+" LoseHeartbeatTimes--:"+LoseHeartbeatTimes);
@@ -107,7 +128,6 @@ public class FireServerHandler extends ChannelHandlerAdapter {
                 //文本数据
                 //logger.debug("=================="+message.getBody());
                 ChannelHandlerContext ctxx = (ChannelHandlerContext)WebServerHandler.webClients.get(""+message.getHeader().getIndex());
-
                 if(ctxx != null){
                     sendGetDeviceID(ctxx, message.getHeader().getIndex(),((String) message.getBody()).getBytes());
                 }else{
