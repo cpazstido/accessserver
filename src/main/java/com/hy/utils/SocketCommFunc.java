@@ -79,13 +79,11 @@ public class SocketCommFunc {
 	  public static int receive(BufferedInputStream inputStream, byte[] recvbuffer, int maxlength)
 	  {
 	    int numbytes;
-	    
 	    try {
 	      numbytes = inputStream.read(recvbuffer, 0, maxlength );
 	    } catch (IOException ioe) {
 	      return -1;
 	    }
-	    
 	    return numbytes;
 	  }
 	  

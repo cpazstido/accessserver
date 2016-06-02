@@ -4,6 +4,7 @@ import com.hy.bean.DeviceInfo;
 import com.hy.bean.Header;
 import com.hy.bean.MessageTypeReq;
 import com.hy.bean.NettyMessage;
+import com.hy.resolver.WebDataResolver;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -31,7 +32,7 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 public class WebServerHandler extends
         SimpleChannelInboundHandler<FullHttpRequest> {
     private final String url;
-    private static int cmdIndex = 0;
+    private static int cmdIndex = 1000;
     public static ConcurrentHashMap webClients = new ConcurrentHashMap();
     private static Logger logger = Logger.getLogger(WebServerHandler.class);
     public synchronized static int getCMDIndex(){
@@ -81,13 +82,15 @@ public class WebServerHandler extends
             DeviceInfo deviceInfo = (DeviceInfo) FireServerHandler.fireClients.get(strs[1]);
             if(deviceInfo != null) {
                 NettyMessage nettyMessage = new NettyMessage();
-                String body = "asdf";
+                String body = null;
+                WebDataResolver webDataResolver = new WebDataResolver();
+                body = webDataResolver.writeXmlForGetDeviceID("I want to get device ID");
                 Header header = new Header();
                 header.setLen(body.length());
                 header.setFlag("HYVC".getBytes());
                 header.setIndex(index);
                 header.setVersion((byte) 1);
-                header.setTypes(MessageTypeReq.INFO.value());
+                header.setTypes(MessageTypeReq.XML_CMD.value());
                 nettyMessage.setHeader(header);
                 nettyMessage.setBody(body.getBytes());
                 nettyMessage.setHeader(header);

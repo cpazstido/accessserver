@@ -101,9 +101,18 @@ public class FireServerHandler extends ChannelHandlerAdapter {
                     LoseHeartbeatTimes = 0;
 //                    logger.debug(ctx.channel().remoteAddress()+" LoseHeartbeatTimes--:"+LoseHeartbeatTimes);
                 }
-            } else {
-                //处理命令
-                fireDataResolver = new FireDataResolver();
+            } else if(message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.CMMD_RESP_XML_RESULT.value()){
+                //xml数据
+            } else if(message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.CMMD_RESP_TXT_RESULT.value()){
+                //文本数据
+                //logger.debug("=================="+message.getBody());
+                ChannelHandlerContext ctxx = (ChannelHandlerContext)WebServerHandler.webClients.get(""+message.getHeader().getIndex());
+
+                if(ctxx != null){
+                    sendGetDeviceID(ctxx, message.getHeader().getIndex(),((String) message.getBody()).getBytes());
+                }else{
+                    logger.debug("nullllllllllllllllllllllllllllll");
+                }
             }
         } catch (Exception e) {
             heartBeatSchedule.cancel(true);
@@ -151,6 +160,23 @@ public class FireServerHandler extends ChannelHandlerAdapter {
         logger.error(cause);
         heartBeatSchedule.cancel(true);
         loginChallengeSchedule.cancel(true);
+    }
+
+    private static void sendGetDeviceID(final ChannelHandlerContext ctx, final int index, final byte[] deviceId) {
+        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
+        //response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
+        response.headers().set(CONTENT_TYPE, "text/plain; charset=UTF-8");
+        StringBuilder buf = new StringBuilder();
+        JSONObject json = new JSONObject();
+        JSONObject member1 = new JSONObject();
+        member1.put("deviceID", new String(deviceId));
+        buf.append(member1.toString());
+        ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
+        response.content().writeBytes(buffer, buf.toString().getBytes().length);
+        logger.debug(buf.toString());
+        buffer.release();
+        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+        WebServerHandler.webClients.remove("" + index);
     }
 
     private static void sendListing(final ChannelHandlerContext ctx, final int index) {

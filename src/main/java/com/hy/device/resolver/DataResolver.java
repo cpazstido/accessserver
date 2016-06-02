@@ -100,5 +100,23 @@ public class DataResolver {
         return info;
     }
 
+    public String textDataResolver(DeviceThread deviceThread, NettyMessage nettyMessage){
+        String body = new String((byte[]) nettyMessage.getBody());
+        return body;
+    }
+
+    public NettyMessage xmlResolver(DeviceThread deviceThread, NettyMessage message){
+        NettyMessage nettyMessage = new NettyMessage();
+        String body = deviceThread.deviceID;
+        Header header = new Header();
+        header.setVersion(message.getHeader().getVersion());
+        header.setFlag(message.getHeader().getFlag());
+        header.setIndex(message.getHeader().getIndex());
+        header.setTypes(MessageTypeResp.CMMD_RESP_TXT_RESULT.value());
+        header.setLen(body.length());
+        nettyMessage.setHeader(header);
+        nettyMessage.setBody(body.getBytes());
+        return nettyMessage;
+    }
 
 }

@@ -38,6 +38,7 @@ public class DeviceThread extends Thread {
         this.ip = ip;
         this.port = port;
         this.deviceID = deviceID;
+        logger.debug("============================="+deviceID+"=============================");
     }
 
     public void run() {
@@ -167,12 +168,23 @@ public class DeviceThread extends Thread {
                         outputStream.flush();
                         break;
                     case 3:
+                        logger.debug("收到XML格式命令！！");
+                        dataResolver = new DataResolver();
+                        outMessage = dataResolver.xmlResolver(this, message);
+                        logger.debug("发送XML格式命令查询回应："+CommonFunctions.byteToHexStr(CommonFunctions.nettyMessageToBytes(outMessage), CommonFunctions.nettyMessageToBytes(outMessage).length));
+                        outputStream.write(CommonFunctions.nettyMessageToBytes(outMessage));
+                        outputStream.flush();
                         break;
                     case 4:
+                        logger.debug("收到数据部分为字符串的数据包！");
+                        dataResolver = new DataResolver();
+                        String data = dataResolver.textDataResolver(this, message);
+                        logger.debug("data:"+data);
                         break;
                     default:
                 }
             } catch (Exception e) {
+                logger.debug(e);
                 e.printStackTrace();
             }
         }
