@@ -1,21 +1,33 @@
 package com.hy.resolver;
 
-import com.hy.bean.DeviceInfo;
-import com.hy.bean.Header;
-import com.hy.bean.MessageTypeReq;
-import com.hy.bean.NettyMessage;
+import com.hy.bean.*;
 import com.hy.handler.FireServerHandler;
+import com.hy.handler.HeartBeatTask;
+import com.hy.handler.WebServerHandler;
 import com.hy.utils.PropertyUtils;
 import com.hy.utils.RedisUtil;
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.http.DefaultFullHttpResponse;
+import io.netty.handler.codec.http.FullHttpResponse;
+import io.netty.util.CharsetUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.pattern.IntegerPatternConverter;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.json.JSONObject;
 import redis.clients.jedis.Jedis;
 
 import java.net.InetSocketAddress;
+import java.util.concurrent.TimeUnit;
+
+import static io.netty.handler.codec.http.HttpHeaders.Names.ACCESS_CONTROL_ALLOW_ORIGIN;
+import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
+import static io.netty.handler.codec.http.HttpResponseStatus.OK;
+import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 /**
  * Created by cpazstido on 2016/5/24.
@@ -139,4 +151,93 @@ public class FireDataResolver {
         return document.asXML();
     }
 
+    public void handleHeartBeatResp(FireServerHandler fireServerHandler,ChannelHandlerContext ctx){
+        //处理心跳回应
+        synchronized (this) {
+            fireServerHandler.LoseHeartbeatTimes = 0;
+        }
+    }
+
+    public void handleXMLResp(){
+
+    }
+
+    public void handleTXTResp(FireServerHandler fireServerHandler,ChannelHandlerContext ctx, NettyMessage message){
+        //文本数据
+        //logger.debug("=================="+message.getBody());
+        ChannelHandlerContext ctxx = (ChannelHandlerContext) WebServerHandler.webClients.get(""+message.getHeader().getIndex());
+        if(ctxx != null){
+            sendGetDeviceID(ctxx, message.getHeader().getIndex(),((String) message.getBody()).getBytes());
+        }else{
+            logger.debug("nullllllllllllllllllllllllllllll");
+        }
+    }
+
+    public void handleLogin(FireServerHandler fireServerHandler,ChannelHandlerContext ctx, NettyMessage message){
+            //处理登录信息
+            logger.debug("收到("+ctx.channel().remoteAddress()+")登录数据报："+ (String) message.getBody());
+            if (fireServerHandler.loginSuccess) {
+                //重复登录，不处理，直接扔掉
+                logger.debug(ctx.channel().remoteAddress() + " 重复登录！");
+                return;
+            }
+           LoginDataResolver(fireServerHandler, message);
+            if (fireServerHandler.loginSuccess) {
+                //登录成功，发心跳
+                fireServerHandler.heartBeatSchedule = ctx.executor().scheduleAtFixedRate(new HeartBeatTask(fireServerHandler), 0, Integer.parseInt(PropertyUtils.getValue("HeartbeatInterval")), TimeUnit.MILLISECONDS);
+                return;
+            } else {
+                ctx.close();
+                return;
+            }
+    }
+
+    public void handleData(FireServerHandler fireServerHandler,ChannelHandlerContext ctx, NettyMessage message){
+        //分类型处理回复数据
+        switch (message.getHeader().getTypes())
+        {
+            case 0:
+                logger.debug("收到type:0"+" 登录回应");
+                handleLogin(fireServerHandler,ctx,message);
+                break;
+            case 1:
+                logger.debug("收到type:1"+" 心跳回应");
+                handleHeartBeatResp(fireServerHandler,ctx);
+                break;
+            case 2:
+                logger.debug("收到type:2"+" 命令收到，正在执行，结果将通过数据通道返回");
+                break;
+            case 3:
+                logger.debug("收到type:3"+" 命令收到，且执行完毕，数据为执行结果(xml格式)");
+                handleXMLResp();
+                break;
+            case 4:
+                logger.debug("收到type:4"+" 命令收到，且执行完毕，数据为执行结果(字符串格式)");
+                handleTXTResp(fireServerHandler, ctx, message);
+                break;
+            case 5:
+                logger.debug("收到type:5"+" 命令执行出错（数据为出错信息）");
+                break;
+            default:
+                logger.debug("收到未知回应"+"");
+        }
+    }
+
+    public void sendGetDeviceID(final ChannelHandlerContext ctx, final int index, final byte[] deviceId) {
+        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
+        //response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
+        response.headers().set(CONTENT_TYPE, "text/plain; charset=UTF-8");
+        response.headers().set(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+        StringBuilder buf = new StringBuilder();
+        JSONObject json = new JSONObject();
+        JSONObject member1 = new JSONObject();
+        member1.put("deviceID", new String(deviceId));
+        buf.append(member1.toString());
+        ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
+        response.content().writeBytes(buffer, buf.toString().getBytes().length);
+        logger.debug("返回给web的数据:"+buf.toString());
+        buffer.release();
+        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+        WebServerHandler.webClients.remove("" + index);
+    }
 }

@@ -33,6 +33,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import static io.netty.handler.codec.http.HttpHeaders.Names.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -63,51 +64,10 @@ public class FireServerHandler extends ChannelHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         try {
             NettyMessage message = (NettyMessage) msg;
-            FireDataResolver fireDataResolver;
-            switch (message.getHeader().getTypes()){
-                case 0:
-                    logger.debug("收到type:0"+" 登录回应");
-                    break;
-                case 1:
-                    logger.debug("收到type:1"+" 心跳回应");
-                    break;
-                case 2:
-                    logger.debug("收到type:2"+" 命令收到，正在执行，结果将通过数据通道返回");
-                    break;
-                case 3:
-                    logger.debug("收到type:3"+" 命令收到，且执行完毕，数据为执行结果(xml格式)");
-                    break;
-                case 4:
-                    logger.debug("收到type:4"+" 命令收到，且执行完毕，数据为执行结果(字符串格式)");
-                    break;
-                case 5:
-                    logger.debug("收到type:5"+" 命令执行出错（数据为出错信息）");
-                    break;
-                default:
-                    logger.debug("收到未知回应"+"");
-            }
-            if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.LOGIN_Resp.value()) {
-                //处理登录信息
-                logger.debug("收到("+ctx.channel().remoteAddress()+")登录数据报："+ (String) message.getBody());
-                if (loginSuccess) {
-                    //重复登录，不处理，直接扔掉
-                    logger.debug(ctx.channel().remoteAddress() + " 重复登录！");
-                    return;
-                }
-                fireDataResolver = new FireDataResolver();
-                fireDataResolver.LoginDataResolver(this, message);
-                if (loginSuccess) {
-                    //登录成功，发心跳
-                    heartBeatSchedule = ctx.executor().scheduleAtFixedRate(new HeartBeatTask(this), 0, Integer.parseInt(PropertyUtils.getValue("HeartbeatInterval")), TimeUnit.MILLISECONDS);
-                    return;
-                } else {
-                    ctx.close();
-                    return;
-                }
-            }
+            FireDataResolver fireDataResolver = new FireDataResolver();
 
-            if (!loginSuccess) {
-                //没登录，设备直接给服务器发数据，踢掉---有可能是恶意攻击，加入黑名单
+            //没登录，设备直接给服务器发数据，踢掉---有可能是恶意攻击，加入黑名单
+            if (!loginSuccess && message.getHeader().getTypes() != MessageTypeResp.LOGIN_Resp.value()) {
                 Jedis jedis = RedisUtil.getJedis();
                 jedis.set(ip, ip);
                 jedis.expire(ip, Integer.parseInt(PropertyUtils.getValue("BlacklistTimeout")));
@@ -115,25 +75,11 @@ public class FireServerHandler extends ChannelHandlerAdapter {
                 fireDataResolver = new FireDataResolver();
                 logger.debug(ctx.channel().remoteAddress()+" didn't login,go into the blacklist!");
                 ctx.writeAndFlush(fireDataResolver.buildInfoResp("didn't login,go into the blacklist!")).addListener(ChannelFutureListener.CLOSE);
-            } else if (message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.HEARTBEAT_Resp.value()) {
-                //处理心跳
-                logger.debug("收到("+ctx.channel().remoteAddress()+") 心跳回复数据报！");
-                synchronized (this) {
-                    LoseHeartbeatTimes = 0;
-//                    logger.debug(ctx.channel().remoteAddress()+" LoseHeartbeatTimes--:"+LoseHeartbeatTimes);
-                }
-            } else if(message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.CMMD_RESP_XML_RESULT.value()){
-                //xml数据
-            } else if(message.getHeader() != null && message.getHeader().getTypes() == MessageTypeResp.CMMD_RESP_TXT_RESULT.value()){
-                //文本数据
-                //logger.debug("=================="+message.getBody());
-                ChannelHandlerContext ctxx = (ChannelHandlerContext)WebServerHandler.webClients.get(""+message.getHeader().getIndex());
-                if(ctxx != null){
-                    sendGetDeviceID(ctxx, message.getHeader().getIndex(),((String) message.getBody()).getBytes());
-                }else{
-                    logger.debug("nullllllllllllllllllllllllllllll");
-                }
             }
+
+            //处理数据
+            fireDataResolver.handleData(this, ctx, message);
+
         } catch (Exception e) {
             heartBeatSchedule.cancel(true);
             loginChallengeSchedule.cancel(true);
@@ -182,22 +128,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
         loginChallengeSchedule.cancel(true);
     }
 
-    private static void sendGetDeviceID(final ChannelHandlerContext ctx, final int index, final byte[] deviceId) {
-        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
-        //response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
-        response.headers().set(CONTENT_TYPE, "text/plain; charset=UTF-8");
-        StringBuilder buf = new StringBuilder();
-        JSONObject json = new JSONObject();
-        JSONObject member1 = new JSONObject();
-        member1.put("deviceID", new String(deviceId));
-        buf.append(member1.toString());
-        ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
-        response.content().writeBytes(buffer, buf.toString().getBytes().length);
-        logger.debug(buf.toString());
-        buffer.release();
-        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
-        WebServerHandler.webClients.remove("" + index);
-    }
+
 
     private static void sendListing(final ChannelHandlerContext ctx, final int index) {
         FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
