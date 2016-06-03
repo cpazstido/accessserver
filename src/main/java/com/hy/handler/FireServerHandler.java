@@ -76,7 +76,6 @@ public class FireServerHandler extends ChannelHandlerAdapter {
                 logger.debug(ctx.channel().remoteAddress()+" didn't login,go into the blacklist!");
                 ctx.writeAndFlush(fireDataResolver.buildInfoResp("didn't login,go into the blacklist!")).addListener(ChannelFutureListener.CLOSE);
             }
-
             //处理数据
             fireDataResolver.handleData(this, ctx, message);
 

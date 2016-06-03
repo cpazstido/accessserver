@@ -59,20 +59,23 @@ public class CommonFunctions
 
     public static byte[] nettyMessageToBytes(NettyMessage nettyMessage){
         int bodyLength = nettyMessage.getHeader().getLen();
-
         byte mes[] = new byte[14+bodyLength];
-        System.arraycopy(nettyMessage.getHeader().getFlag(),0,mes,0,4);
-        byte version[] = new byte[1];
-        version[0] = nettyMessage.getHeader().getVersion();
-        System.arraycopy(version,0,mes,4,1);
-        System.arraycopy(BigEndian.toBigEndian(nettyMessage.getHeader().getIndex()),0,mes,5,4);
-        byte types[] = new byte[1];
-        types[0] = nettyMessage.getHeader().getTypes();
-        System.arraycopy(types,0,mes,9,1);
-        System.arraycopy(BigEndian.toBigEndian(nettyMessage.getHeader().getLen()),0,mes,10,4);
-        if(bodyLength != 0){
-            byte []bb = (byte [])nettyMessage.getBody();
-            System.arraycopy(bb, 0, mes, 14, bodyLength);
+        try {
+            System.arraycopy(nettyMessage.getHeader().getFlag(),0,mes,0,4);
+            byte version[] = new byte[1];
+            version[0] = nettyMessage.getHeader().getVersion();
+            System.arraycopy(version,0,mes,4,1);
+            System.arraycopy(BigEndian.toBigEndian(nettyMessage.getHeader().getIndex()),0,mes,5,4);
+            byte types[] = new byte[1];
+            types[0] = nettyMessage.getHeader().getTypes();
+            System.arraycopy(types,0,mes,9,1);
+            System.arraycopy(BigEndian.toBigEndian(nettyMessage.getHeader().getLen()),0,mes,10,4);
+            if(bodyLength != 0){
+                byte []bb = (byte [])nettyMessage.getBody();
+                System.arraycopy(bb, 0, mes, 14, bodyLength);
+            }
+        }catch (Exception e){
+            logger.debug(e);
         }
 
         return mes;

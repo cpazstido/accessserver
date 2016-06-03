@@ -106,6 +106,26 @@ public class DataResolver {
     }
 
     public NettyMessage xmlResolver(DeviceThread deviceThread, NettyMessage message){
+        String body = new String((byte[]) message.getBody());
+        try {
+            //logger.debug("开始解析:"+ body);
+            Document doc = null;
+            doc = DocumentHelper.parseText(body); // 将字符串转为XML
+            Element rootElt = doc.getRootElement(); // 获取根节点
+            String sEventType = rootElt.attributeValue("EventType");// 拿到根节点的属性
+            if(sEventType !=null && sEventType.compareTo("GetDeviceID") ==0){
+                return getDeviceID(deviceThread, message);
+            }else if(sEventType !=null && sEventType.compareTo("GetPicture") ==0){
+                return getPicture(deviceThread,message);
+            }
+        }catch (Exception e){
+            logger.debug(e);
+        }
+        logger.debug("nullllllllllllllllllllllllll");
+        return null;
+    }
+
+    public NettyMessage getDeviceID(DeviceThread deviceThread, NettyMessage message){
         NettyMessage nettyMessage = new NettyMessage();
         String body = deviceThread.deviceID;
         Header header = new Header();
@@ -117,6 +137,34 @@ public class DataResolver {
         nettyMessage.setHeader(header);
         nettyMessage.setBody(body.getBytes());
         return nettyMessage;
+    }
+
+    public NettyMessage getPicture(DeviceThread deviceThread, NettyMessage message){
+        NettyMessage nettyMessage = new NettyMessage();
+        try {
+            String body = writeXmlForGetPicture("success!picture will be send by data channel!");
+            Header header = new Header();
+            header.setVersion(message.getHeader().getVersion());
+            header.setFlag(message.getHeader().getFlag());
+            header.setIndex(message.getHeader().getIndex());
+            header.setTypes(MessageTypeResp.CMMD_RESP_XML_RESULT.value());
+            header.setLen(body.length());
+            nettyMessage.setHeader(header);
+            nettyMessage.setBody(body.getBytes());
+            logger.debug(body);
+        }catch (Exception e){
+            logger.error(e);
+        }
+        return nettyMessage;
+    }
+
+    public String writeXmlForGetPicture(String info) {
+        Document document = DocumentHelper.createDocument();
+        Element root = document.addElement("eMonitor_XML");
+        root.addAttribute("EventType", "GetPicture");
+        Element eRandomCode = root.addElement("Info");
+        eRandomCode.setText(info);
+        return document.asXML();
     }
 
 }

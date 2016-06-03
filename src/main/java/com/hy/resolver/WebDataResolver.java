@@ -38,13 +38,22 @@ public class WebDataResolver {
         return document.asXML();
     }
 
+    public String writeXmlForGetPicture(String info) {
+        Document document = DocumentHelper.createDocument();
+        Element root = document.addElement("eMonitor_XML");
+        root.addAttribute("EventType", "GetPicture");
+        Element eRandomCode = root.addElement("Info");
+        eRandomCode.setText(info);
+        return document.asXML();
+    }
+
     public void handleData(WebServerHandler webServerHandler, ChannelHandlerContext ctx, FullHttpRequest request) {
         String action = request.getUri().substring(1, request.getUri().length());
         logger.debug("action:" + action);
         if (action.compareTo("getDeviceID") == 0) {
             getDeviceID(webServerHandler,ctx);
-        } else if (action.compareTo("") == 0) {
-
+        } else if (action.compareTo("getPicture") == 0) {
+            getPicture(webServerHandler,ctx);
         } else {
             sendError(ctx, HttpResponseStatus.BAD_REQUEST);
         }
@@ -68,6 +77,29 @@ public class WebDataResolver {
             NettyMessage nettyMessage = new NettyMessage();
             String body = null;
             body = writeXmlForGetDeviceID("I want to get device ID");
+            Header header = new Header();
+            header.setLen(body.length());
+            header.setFlag("HYVC".getBytes());
+            header.setIndex(index);
+            header.setVersion((byte) 1);
+            header.setTypes(MessageTypeReq.XML_CMD.value());
+            nettyMessage.setHeader(header);
+            nettyMessage.setBody(body.getBytes());
+            nettyMessage.setHeader(header);
+            deviceInfo.getFsh().channelHandlerContext.writeAndFlush(nettyMessage);
+        } else {
+            logger.debug("nulllllllllllllllll");
+        }
+    }
+
+    public void getPicture(WebServerHandler webServerHandler, ChannelHandlerContext ctx) {
+        int index = WebServerHandler.getCMDIndex();
+        webServerHandler.webClients.put("" + index, ctx);
+        DeviceInfo deviceInfo = (DeviceInfo) FireServerHandler.fireClients.get(webServerHandler.postParam.get("deviceid"));
+        if (deviceInfo != null) {
+            NettyMessage nettyMessage = new NettyMessage();
+            String body = null;
+            body = writeXmlForGetPicture("I want to get a picture");
             Header header = new Header();
             header.setLen(body.length());
             header.setFlag("HYVC".getBytes());

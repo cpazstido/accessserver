@@ -82,6 +82,7 @@ public class SocketCommFunc {
 	    try {
 	      numbytes = inputStream.read(recvbuffer, 0, maxlength );
 	    } catch (IOException ioe) {
+			logger.debug(ioe);
 	      return -1;
 	    }
 	    return numbytes;
