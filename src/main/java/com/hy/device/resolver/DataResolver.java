@@ -4,6 +4,7 @@ import com.hy.bean.Header;
 import com.hy.bean.MessageTypeResp;
 import com.hy.bean.NettyMessage;
 import com.hy.device.DeviceThread;
+import com.hy.device.SendFileThread;
 import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
@@ -151,7 +152,10 @@ public class DataResolver {
             header.setLen(body.length());
             nettyMessage.setHeader(header);
             nettyMessage.setBody(body.getBytes());
-            logger.debug(body);
+
+            logger.debug("发送文件！");
+            SendFileThread sendFileThread = new SendFileThread("172.16.16.112",8080);
+            sendFileThread.start();
         }catch (Exception e){
             logger.error(e);
         }

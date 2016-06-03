@@ -38,7 +38,7 @@ public class DeviceThread extends Thread {
         this.ip = ip;
         this.port = port;
         this.deviceID = deviceID;
-        logger.debug("============================="+deviceID+"=============================");
+        logger.debug("=============================" + deviceID + "=============================");
     }
 
     public void run() {
@@ -184,7 +184,7 @@ public class DeviceThread extends Thread {
                             break;
                         default:
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     logger.debug(e);
                 }
             } catch (Exception e) {
