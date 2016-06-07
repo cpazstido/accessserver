@@ -86,6 +86,14 @@ public class SendFileThread extends Thread {
                 logger.error(e);
             }
         }
+        if(tcpSocket != null){
+            try {
+                tcpSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        logger.debug("ssssssss");
     }
 
     public void sendFile(BufferedOutputStream out,String filePath){
@@ -101,7 +109,7 @@ public class SendFileThread extends Thread {
                 out.flush();
             }
         }catch (Exception e){
-            logger.debug(e);
+            logger.error(e);
         }
     }
 }
