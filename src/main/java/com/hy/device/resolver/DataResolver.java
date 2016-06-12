@@ -154,7 +154,7 @@ public class DataResolver {
             nettyMessage.setBody(body.getBytes());
 
             logger.debug("发送文件！");
-            SendFileThread sendFileThread = new SendFileThread("172.16.16.112",8080);
+            SendFileThread sendFileThread = new SendFileThread("172.16.16.112",9002);
             sendFileThread.start();
         }catch (Exception e){
             logger.error(e);
