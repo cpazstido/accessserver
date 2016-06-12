@@ -4,6 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPromise;
 import io.netty.channel.SimpleChannelInboundHandler;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -14,6 +15,7 @@ import java.io.IOException;
  * Created by cpazstido on 2016/6/12.
  */
 public class FireServerDataHandler extends SimpleChannelInboundHandler<String> {
+    private static Logger logger = Logger.getLogger(FireServerDataHandler.class);
 
     private static final String CR = System.getProperty("line.separator");
     private int total = 0;
@@ -23,7 +25,7 @@ public class FireServerDataHandler extends SimpleChannelInboundHandler<String> {
     private File file = null;
 
     public FireServerDataHandler() {
-        System.out.println("FireServerDataHandler()");
+        logger.debug("FireServerDataHandler()");
         total = 0;
         first = true;
         bufferedOutputStream = null;
@@ -54,7 +56,7 @@ public class FireServerDataHandler extends SimpleChannelInboundHandler<String> {
             first = false;
             byte[] fileName = new byte[7];
             buffer.readBytes(fileName, 0, 7);
-            System.out.println(new String(fileName));
+            logger.debug(new String(fileName));
             file = new File("d:\\test", new String(fileName));
             if (!file.exists()) {
                 file.createNewFile();
@@ -64,18 +66,18 @@ public class FireServerDataHandler extends SimpleChannelInboundHandler<String> {
                 index++;
                 file.createNewFile();
                 bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
-                System.out.println("file is exists!");
+                logger.debug("file is exists!");
             }
         }
         if (bufferedOutputStream != null) {
             int length = buffer.readableBytes();
+            total += length;
             byte[] data = new byte[length];
             buffer.readBytes(data, 0, length);
             bufferedOutputStream.write(data);
             bufferedOutputStream.flush();
         }
-        total += buffer.readableBytes();
-        System.out.println("total:" + total);
+        logger.debug("total:" + total/1024.0 +"KB");
     }
 
     public void messageReceived(ChannelHandlerContext ctx, String msg)
