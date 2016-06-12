@@ -5,7 +5,7 @@ package com.hy.device;
  */
 public class SendFileMainTest {
     public static void main(String[] args) throws InterruptedException {
-        SendFileThread sendFileThread = new SendFileThread("172.16.16.112",8080);
+        SendFileThread sendFileThread = new SendFileThread("172.16.16.112",9002);
         sendFileThread.start();
     }
 }

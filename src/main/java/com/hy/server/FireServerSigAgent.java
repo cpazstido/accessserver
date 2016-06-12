@@ -22,9 +22,9 @@ import org.apache.log4j.Logger;
 /**
  * Created by cpazstido on 2016/5/23.
  */
-public class FireServerAgent extends ServerAgent{
-    private static Logger logger=Logger.getLogger(FireServerAgent.class);
-    public FireServerAgent(String serverName, int port){
+public class FireServerSigAgent extends ServerAgent{
+    private static Logger logger=Logger.getLogger(FireServerSigAgent.class);
+    public FireServerSigAgent(String serverName, int port){
         this.setServerName(serverName);
         this.setPort(port);
     }

@@ -1,6 +1,6 @@
 package com.hy.main;
-
-import com.hy.server.FireServerAgent;
+import com.hy.server.FireServerDataAgent;
+import com.hy.server.FireServerSigAgent;
 import com.hy.server.StatusDataServerAgent;
 import com.hy.server.WebServerAgent;
 import com.hy.utils.PropertyUtils;
@@ -49,8 +49,22 @@ public class MainServer {
                 public void run() {
                     try {
                         int port = Integer.parseInt(PropertyUtils.getValue("FireServerSigPort"));
-                        FireServerAgent fireServerAgent = new FireServerAgent("FireServerSigAgent", port);
+                        FireServerSigAgent fireServerAgent = new FireServerSigAgent("FireServerSigAgent", port);
                         fireServerAgent.bind();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
+
+            //开启fire信令通道线程
+            new Thread("FireData") {
+                @Override
+                public void run() {
+                    try {
+                        int port = Integer.parseInt(PropertyUtils.getValue("FireServerDataPort"));
+                        FireServerDataAgent fireServerDataAgent = new FireServerDataAgent("FireServerDataAgent", port);
+                        fireServerDataAgent.bind();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
