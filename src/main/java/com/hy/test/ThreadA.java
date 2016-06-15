@@ -12,6 +12,7 @@ public class ThreadA extends Thread {
         b.setName("b线程");
         c.start();
         System.out.println(Thread.currentThread().getName()+" is start....");
+
         synchronized(c)
         {
             try

@@ -5,6 +5,7 @@ package com.hy.test;
  */
 public class ThreadC extends Thread {
     private Integer cc = 0;
+
     public ThreadC(){
 
     }
@@ -14,6 +15,11 @@ public class ThreadC extends Thread {
     int sum=1;
     public void run()
     {
+        this.interrupt();
+        System.out.println(this.isInterrupted()+" c.isInterrupted()");
+        this.interrupted();
+        //Thread.interrupted();
+        System.out.println(this.isInterrupted()+" c.isInterrupted()");
         synchronized(this)
         {
             System.out.println(Thread.currentThread().getName()+" is running..");
@@ -22,7 +28,7 @@ public class ThreadC extends Thread {
                 sum *=i;
             }
             System.out.println("sum is "+sum);
-            notify();
+            //notify();
         }
         System.out.println("ThreadC is exit!");
     }

@@ -9,6 +9,7 @@ public class ThreadPoolTest {
 //        PrintNum p = new PrintNum();
 //        p.demo();
 
+
         ThreadB b = new ThreadB();
         b.start();//主线程中启动另外一个线程
         System.out.println("b is start....");

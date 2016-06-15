@@ -224,26 +224,26 @@ public class FireDataResolver {
         response.headers().set(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
         switch (message.getHeader().getTypes()) {
             case 0:
-                logger.debug("收到type:0" + " 登录回应");
+                logger.debug("收到type:LOGIN_Resp" + " 登录回应");
                 handleLogin(fireServerHandler, ctx, message);
                 break;
             case 1:
-                logger.debug("收到type:1" + " 心跳回应");
+                logger.debug("收到type:HEARTBEAT_Resp" + " 心跳回应");
                 handleHeartBeatResp(fireServerHandler, ctx);
                 break;
             case 2:
-                logger.debug("收到type:2" + " 命令收到，正在执行，结果将通过数据通道返回");
+                logger.debug("收到type:CMMD_RESP_RUNNING" + " 命令收到，正在执行，结果将通过数据通道返回");
                 break;
             case 3:
-                logger.debug("收到type:3" + " 命令收到，且执行完毕，数据为执行结果(xml格式)");
+                logger.debug("收到type:CMMD_RESP_XML_RESULT" + " 命令收到，且执行完毕，数据为执行结果(xml格式)");
                 handleXMLResp(fireServerHandler, ctx, message, response);
                 break;
             case 4:
-                logger.debug("收到type:4" + " 命令收到，且执行完毕，数据为执行结果(字符串格式)");
+                logger.debug("收到type:CMMD_RESP_TXT_RESULT" + " 命令收到，且执行完毕，数据为执行结果(字符串格式)");
                 handleTXTResp(fireServerHandler, ctx, message, response);
                 break;
             case 5:
-                logger.debug("收到type:5" + " 命令执行出错（数据为出错信息）");
+                logger.debug("收到type:CMMD_RESP_ERROR" + " 命令执行出错（数据为出错信息）");
                 //handleXMLResp(fireServerHandler, ctx, message, response);
                 break;
             default:
