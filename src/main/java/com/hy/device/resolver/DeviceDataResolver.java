@@ -13,8 +13,8 @@ import org.dom4j.Element;
 /**
  * Created by cpazstido on 2016/6/1.
  */
-public class DataResolver {
-    public static Logger logger = Logger.getLogger(DataResolver.class);
+public class DeviceDataResolver {
+    public static Logger logger = Logger.getLogger(DeviceDataResolver.class);
 
 
     public NettyMessage loginChallengeResolver(DeviceThread deviceThread, NettyMessage message){

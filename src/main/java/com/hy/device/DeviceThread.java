@@ -2,7 +2,7 @@ package com.hy.device;
 
 import com.hy.bean.Header;
 import com.hy.bean.NettyMessage;
-import com.hy.device.resolver.DataResolver;
+import com.hy.device.resolver.DeviceDataResolver;
 import com.hy.utils.BigEndian;
 import com.hy.utils.ByteHelper;
 import com.hy.utils.CommonFunctions;
@@ -141,14 +141,14 @@ public class DeviceThread extends Thread {
                 message.setBody(msgBodyBuf);
 
                 //logger.debug("类型：" + (int) message.getHeader().getTypes());
-                DataResolver dataResolver;
+                DeviceDataResolver dataResolver;
                 NettyMessage outMessage;
                 logger.debug("收到数据：" + CommonFunctions.byteToHexStr(dataBytes, 14 + rsvSize));
                 try {
                     switch (message.getHeader().getTypes()) {
                         case 0:
                             logger.debug("收到登录挑战！");
-                            dataResolver = new DataResolver();
+                            dataResolver = new DeviceDataResolver();
                             outMessage = dataResolver.loginChallengeResolver(this, message);
                             logger.debug("发送登录挑战回应：" + CommonFunctions.byteToHexStr(CommonFunctions.nettyMessageToBytes(outMessage), CommonFunctions.nettyMessageToBytes(outMessage).length));
                             outputStream.write(CommonFunctions.nettyMessageToBytes(outMessage));
@@ -156,13 +156,13 @@ public class DeviceThread extends Thread {
                             break;
                         case 1:
                             logger.debug("收到信息报！！");
-                            dataResolver = new DataResolver();
+                            dataResolver = new DeviceDataResolver();
                             String info = dataResolver.infoResolver(this, message);
                             logger.debug("info:" + info);
                             break;
                         case 2:
                             logger.debug("收到心跳包！！");
-                            dataResolver = new DataResolver();
+                            dataResolver = new DeviceDataResolver();
                             outMessage = dataResolver.heartBeatResolver(this, message);
                             logger.debug("发送心跳回应：" + CommonFunctions.byteToHexStr(CommonFunctions.nettyMessageToBytes(outMessage), CommonFunctions.nettyMessageToBytes(outMessage).length));
                             outputStream.write(CommonFunctions.nettyMessageToBytes(outMessage));
@@ -170,7 +170,7 @@ public class DeviceThread extends Thread {
                             break;
                         case 3:
                             logger.debug("收到XML格式命令！！");
-                            dataResolver = new DataResolver();
+                            dataResolver = new DeviceDataResolver();
                             outMessage = dataResolver.xmlResolver(this, message);
                             logger.debug("发送XML格式命令查询回应：" + CommonFunctions.byteToHexStr(CommonFunctions.nettyMessageToBytes(outMessage), CommonFunctions.nettyMessageToBytes(outMessage).length));
                             outputStream.write(CommonFunctions.nettyMessageToBytes(outMessage));
@@ -178,7 +178,7 @@ public class DeviceThread extends Thread {
                             break;
                         case 4:
                             logger.debug("收到数据部分为字符串的数据包！");
-                            dataResolver = new DataResolver();
+                            dataResolver = new DeviceDataResolver();
                             String data = dataResolver.textDataResolver(this, message);
                             logger.debug("data:" + data);
                             break;
