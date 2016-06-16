@@ -162,6 +162,7 @@ public class FireDataResolver {
 
     public void handleXMLResp(FireServerHandler fireServerHandler, ChannelHandlerContext ctx, NettyMessage message, FullHttpResponse response) {
         String body = (String) message.getBody();
+        //logger.debug("收到xml数据:"+body);
         ChannelHandlerContext ctxx = (ChannelHandlerContext) WebServerHandler.webClients.get("" + message.getHeader().getIndex());
         try {
             if (ctxx != null) {
@@ -176,6 +177,11 @@ public class FireDataResolver {
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendGetPicture(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("SetTime") == 0){
+                    //网络校时
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendSetTime(response, ctxx, message.getHeader().getIndex(), info);
                 }
             } else {
                 logger.debug("nullllllllllllllllllllllllllllll");
@@ -191,7 +197,8 @@ public class FireDataResolver {
         //logger.debug("=================="+message.getBody());
         ChannelHandlerContext ctxx = (ChannelHandlerContext) WebServerHandler.webClients.get("" + message.getHeader().getIndex());
         if (ctxx != null) {
-            sendGetDeviceID(response, ctxx, message.getHeader().getIndex(), ((String) message.getBody()).getBytes());
+            //sendGetDeviceID(response, ctxx, message.getHeader().getIndex(), ((String) message.getBody()).getBytes());
+            sendInfo(response, ctxx, message.getHeader().getIndex(), ((String) message.getBody()).getBytes());
         } else {
             logger.debug("nullllllllllllllllllllllllllllll");
         }
@@ -269,11 +276,43 @@ public class FireDataResolver {
         }
     }
 
+    public void sendSetTime(FullHttpResponse response, ChannelHandlerContext ctx, int index, String info) {
+        try {
+            StringBuilder buf = new StringBuilder();
+            JSONObject member1 = new JSONObject();
+            member1.put("info", info);
+            buf.append(member1.toString());
+            ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
+            response.content().writeBytes(buffer, buf.toString().getBytes().length);
+            logger.debug("返回给web的数据:" + buf.toString());
+            buffer.release();
+            ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+            logger.debug("remove web!" + index);
+            WebServerHandler.webClients.remove("" + index);
+        } catch (Exception e) {
+            logger.error(e);
+        }
+    }
+
     public void sendGetDeviceID(FullHttpResponse response, final ChannelHandlerContext ctx, final int index, final byte[] deviceId) {
         StringBuilder buf = new StringBuilder();
         JSONObject json = new JSONObject();
         JSONObject member1 = new JSONObject();
-        member1.put("deviceID", new String(deviceId));
+        member1.put("info", new String(deviceId));
+        buf.append(member1.toString());
+        ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
+        response.content().writeBytes(buffer, buf.toString().getBytes().length);
+        logger.debug("返回给web的数据:" + buf.toString());
+        buffer.release();
+        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+        WebServerHandler.webClients.remove("" + index);
+    }
+
+    public void sendInfo(FullHttpResponse response, final ChannelHandlerContext ctx, final int index, final byte[] info) {
+        StringBuilder buf = new StringBuilder();
+        JSONObject json = new JSONObject();
+        JSONObject member1 = new JSONObject();
+        member1.put("info", new String(info));
         buf.append(member1.toString());
         ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
         response.content().writeBytes(buffer, buf.toString().getBytes().length);

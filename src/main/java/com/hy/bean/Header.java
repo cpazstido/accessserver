@@ -10,6 +10,17 @@ public class Header {
     private byte types;
     private int len;
 
+    public Header(){
+        this.flag = ConstantValue.FLAGS.getBytes();
+        this.version = ConstantValue.VERSION;
+    }
+
+    public Header(int index,byte types, int len){
+        this.index = index;
+        this.types = types;
+        this.len = len;
+    }
+
     public byte[] getFlag() {
         return flag;
     }

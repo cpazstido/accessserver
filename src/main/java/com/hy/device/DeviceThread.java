@@ -47,7 +47,7 @@ public class DeviceThread extends Thread {
         while (true) {
             try {
                 //1，判断socket是否建立，如果没有建立就重新建立socket
-                if (tcpSocket == null) {
+                if (tcpSocket == null || !tcpSocket.isConnected()) {
                     try {
                         tcpSocket = new Socket(ip, port);
                         inputStream = new BufferedInputStream(tcpSocket.getInputStream());

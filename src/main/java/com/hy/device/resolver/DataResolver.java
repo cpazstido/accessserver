@@ -109,7 +109,7 @@ public class DataResolver {
     public NettyMessage xmlResolver(DeviceThread deviceThread, NettyMessage message){
         String body = new String((byte[]) message.getBody());
         try {
-            //logger.debug("开始解析:"+ body);
+            //logger.debug("收到xml命令:"+ body);
             Document doc = null;
             doc = DocumentHelper.parseText(body); // 将字符串转为XML
             Element rootElt = doc.getRootElement(); // 获取根节点
@@ -118,6 +118,9 @@ public class DataResolver {
                 return getDeviceID(deviceThread, message);
             }else if(sEventType !=null && sEventType.compareTo("GetPicture") ==0){
                 return getPicture(deviceThread,message);
+            }else if(sEventType != null && sEventType.compareTo("SetTime") == 0){
+                logger.debug("收到xml命令:"+ body);
+                return setTime(deviceThread,message);
             }
         }catch (Exception e){
             logger.debug(e);
@@ -134,6 +137,20 @@ public class DataResolver {
         header.setFlag(message.getHeader().getFlag());
         header.setIndex(message.getHeader().getIndex());
         header.setTypes(MessageTypeResp.CMMD_RESP_TXT_RESULT.value());
+        header.setLen(body.length());
+        nettyMessage.setHeader(header);
+        nettyMessage.setBody(body.getBytes());
+        return nettyMessage;
+    }
+
+    public NettyMessage setTime(DeviceThread deviceThread, NettyMessage message){
+        NettyMessage nettyMessage = new NettyMessage();
+        String body = writeXmlForSetTime("set time success!");
+        Header header = new Header();
+        header.setVersion(message.getHeader().getVersion());
+        header.setFlag(message.getHeader().getFlag());
+        header.setIndex(message.getHeader().getIndex());
+        header.setTypes(MessageTypeResp.CMMD_RESP_XML_RESULT.value());
         header.setLen(body.length());
         nettyMessage.setHeader(header);
         nettyMessage.setBody(body.getBytes());
@@ -166,6 +183,15 @@ public class DataResolver {
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("eMonitor_XML");
         root.addAttribute("EventType", "GetPicture");
+        Element eRandomCode = root.addElement("Info");
+        eRandomCode.setText(info);
+        return document.asXML();
+    }
+
+    public String writeXmlForSetTime(String info) {
+        Document document = DocumentHelper.createDocument();
+        Element root = document.addElement("eMonitor_XML");
+        root.addAttribute("EventType", "SetTime");
         Element eRandomCode = root.addElement("Info");
         eRandomCode.setText(info);
         return document.asXML();
