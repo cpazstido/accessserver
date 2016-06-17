@@ -182,7 +182,42 @@ public class FireDataResolver {
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendSetTime(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("PTZ") == 0){
+                    //ptz控制
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }
+                else if (sEventType != null && sEventType.compareTo("ChangePTZMode") == 0){
+                    //ptz控制
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("StartRealPlay") == 0){
+                    //实时预览
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("VideoEncoderConfiguration") == 0){
+                    //可见光相机分辨率设置
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("SetPreset") == 0){
+                    //预置点
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("SavePatrol") == 0){
+                    //预置点
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }
+                else{
+                    logger.debug("设备返回xml类型未找到！！");
+                }
+
             } else {
                 logger.debug("nullllllllllllllllllllllllllllll");
             }
@@ -259,6 +294,24 @@ public class FireDataResolver {
     }
 
     public void sendGetPicture(FullHttpResponse response, ChannelHandlerContext ctx, int index, String info) {
+        try {
+            StringBuilder buf = new StringBuilder();
+            JSONObject member1 = new JSONObject();
+            member1.put("info", info);
+            buf.append(member1.toString());
+            ByteBuf buffer = Unpooled.copiedBuffer(buf, CharsetUtil.UTF_8);
+            response.content().writeBytes(buffer, buf.toString().getBytes().length);
+            logger.debug("返回给web的数据:" + buf.toString());
+            buffer.release();
+            ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+            logger.debug("remove web!" + index);
+            WebServerHandler.webClients.remove("" + index);
+        } catch (Exception e) {
+            logger.error(e);
+        }
+    }
+
+    public void sendInfo(FullHttpResponse response, ChannelHandlerContext ctx, int index, String info) {
         try {
             StringBuilder buf = new StringBuilder();
             JSONObject member1 = new JSONObject();

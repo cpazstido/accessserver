@@ -109,7 +109,7 @@ public class DeviceDataResolver {
     public NettyMessage xmlResolver(DeviceThread deviceThread, NettyMessage message){
         String body = new String((byte[]) message.getBody());
         try {
-            //logger.debug("收到xml命令:"+ body);
+            logger.debug("收到xml命令:"+ body);
             Document doc = null;
             doc = DocumentHelper.parseText(body); // 将字符串转为XML
             Element rootElt = doc.getRootElement(); // 获取根节点
@@ -119,8 +119,19 @@ public class DeviceDataResolver {
             }else if(sEventType !=null && sEventType.compareTo("GetPicture") ==0){
                 return getPicture(deviceThread,message);
             }else if(sEventType != null && sEventType.compareTo("SetTime") == 0){
-                logger.debug("收到xml命令:"+ body);
                 return setTime(deviceThread,message);
+            }else if (sEventType != null && sEventType.compareTo("PTZ") == 0){
+                return PTZ(deviceThread,message);
+            }else if (sEventType != null && sEventType.compareTo("ChangePTZMode") == 0){
+                return ChangePTZMode(deviceThread,message);
+            }else if (sEventType != null && sEventType.compareTo("StartRealPlay") == 0){
+                return DTOA_XML(deviceThread,message,"StartRealPlay","StartRealPlay Success!");
+            }else if (sEventType != null && sEventType.compareTo("VideoEncoderConfiguration") == 0){
+                return DTOA_XML(deviceThread,message,"VideoEncoderConfiguration","VideoEncoderConfiguration Success!");
+            }else if (sEventType != null && sEventType.compareTo("SetPreset") == 0){
+                return DTOA_XML(deviceThread,message,"SetPreset","SetPreset Success!");
+            }else if (sEventType != null && sEventType.compareTo("SavePatrol") == 0){
+                return DTOA_XML(deviceThread,message,"SavePatrol","SavePatrol Success!");
             }
         }catch (Exception e){
             logger.debug(e);
@@ -146,6 +157,48 @@ public class DeviceDataResolver {
     public NettyMessage setTime(DeviceThread deviceThread, NettyMessage message){
         NettyMessage nettyMessage = new NettyMessage();
         String body = writeXmlForSetTime("set time success!");
+        Header header = new Header();
+        header.setVersion(message.getHeader().getVersion());
+        header.setFlag(message.getHeader().getFlag());
+        header.setIndex(message.getHeader().getIndex());
+        header.setTypes(MessageTypeResp.CMMD_RESP_XML_RESULT.value());
+        header.setLen(body.length());
+        nettyMessage.setHeader(header);
+        nettyMessage.setBody(body.getBytes());
+        return nettyMessage;
+    }
+
+    public NettyMessage PTZ(DeviceThread deviceThread, NettyMessage message){
+        NettyMessage nettyMessage = new NettyMessage();
+        String body = writeXmlForInfo("PTZ", "PTZ success!");
+        Header header = new Header();
+        header.setVersion(message.getHeader().getVersion());
+        header.setFlag(message.getHeader().getFlag());
+        header.setIndex(message.getHeader().getIndex());
+        header.setTypes(MessageTypeResp.CMMD_RESP_XML_RESULT.value());
+        header.setLen(body.length());
+        nettyMessage.setHeader(header);
+        nettyMessage.setBody(body.getBytes());
+        return nettyMessage;
+    }
+
+    public NettyMessage ChangePTZMode(DeviceThread deviceThread, NettyMessage message){
+        NettyMessage nettyMessage = new NettyMessage();
+        String body = writeXmlForInfo("ChangePTZMode", "ChangePTZMode success!");
+        Header header = new Header();
+        header.setVersion(message.getHeader().getVersion());
+        header.setFlag(message.getHeader().getFlag());
+        header.setIndex(message.getHeader().getIndex());
+        header.setTypes(MessageTypeResp.CMMD_RESP_XML_RESULT.value());
+        header.setLen(body.length());
+        nettyMessage.setHeader(header);
+        nettyMessage.setBody(body.getBytes());
+        return nettyMessage;
+    }
+
+    public NettyMessage DTOA_XML(DeviceThread deviceThread, NettyMessage message,String eventType, String info){
+        NettyMessage nettyMessage = new NettyMessage();
+        String body = writeXmlForInfo(eventType, info);
         Header header = new Header();
         header.setVersion(message.getHeader().getVersion());
         header.setFlag(message.getHeader().getFlag());
@@ -192,6 +245,15 @@ public class DeviceDataResolver {
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("eMonitor_XML");
         root.addAttribute("EventType", "SetTime");
+        Element eRandomCode = root.addElement("Info");
+        eRandomCode.setText(info);
+        return document.asXML();
+    }
+
+    public String writeXmlForInfo(String eventType, String info) {
+        Document document = DocumentHelper.createDocument();
+        Element root = document.addElement("eMonitor_XML");
+        root.addAttribute("EventType", eventType);
         Element eRandomCode = root.addElement("Info");
         eRandomCode.setText(info);
         return document.asXML();

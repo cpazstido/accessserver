@@ -73,8 +73,20 @@ public class WebDataResolver {
             getDeviceID(webServerHandler,ctx);
         } else if (action.compareTo("getPicture") == 0) {
             getPicture(webServerHandler,ctx);
-        } else if(action.compareTo("setTime") == 0){
+        } else if (action.compareTo("setTime") == 0){
             setTime(webServerHandler,ctx);
+        } else if (action.compareTo("PTZ") == 0){
+            PTZ(webServerHandler,ctx);
+        } else if (action.compareTo("ChangePTZMode") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("StartRealPlay") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("VideoEncoderConfiguration") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("SetPreset") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("SavePatrol") ==0){
+            ATOD_XML(webServerHandler, ctx);
         }
         else {
             sendError(ctx, HttpResponseStatus.BAD_REQUEST);
@@ -164,6 +176,54 @@ public class WebDataResolver {
             deviceInfo.getFsh().channelHandlerContext.writeAndFlush(nettyMessage);
         } else {
             logger.debug("nulllllllllllllllll");
+        }
+    }
+
+    public void PTZ(WebServerHandler webServerHandler, ChannelHandlerContext ctx) {
+        int index = WebServerHandler.getCMDIndex();
+        webServerHandler.webClients.put("" + index, ctx);
+        DeviceInfo deviceInfo = (DeviceInfo) FireServerHandler.fireClients.get(webServerHandler.postParam.get("deviceid"));
+        if (deviceInfo != null) {
+            NettyMessage nettyMessage = new NettyMessage();
+            String body = null;
+            body = (String) webServerHandler.postParam.get("xml");
+            logger.debug(body);
+            Header header = new Header();
+            header.setLen(body.length());
+            header.setFlag(ConstantValue.FLAGS.getBytes());
+            header.setIndex(index);
+            header.setVersion(ConstantValue.VERSION);
+            header.setTypes(MessageTypeReq.XML_CMD.value());
+            nettyMessage.setHeader(header);
+            nettyMessage.setBody(body.getBytes());
+            nettyMessage.setHeader(header);
+            deviceInfo.getFsh().channelHandlerContext.writeAndFlush(nettyMessage);
+        } else {
+            logger.debug("nulllllllllllllllll");
+        }
+    }
+
+    public void ATOD_XML(WebServerHandler webServerHandler, ChannelHandlerContext ctx) {
+        int index = WebServerHandler.getCMDIndex();
+        webServerHandler.webClients.put("" + index, ctx);
+        DeviceInfo deviceInfo = (DeviceInfo) FireServerHandler.fireClients.get(webServerHandler.postParam.get("deviceid"));
+        if (deviceInfo != null) {
+            NettyMessage nettyMessage = new NettyMessage();
+            String body = null;
+            body = (String) webServerHandler.postParam.get("xml");
+            logger.debug(body);
+            Header header = new Header();
+            header.setLen(body.length());
+            header.setFlag(ConstantValue.FLAGS.getBytes());
+            header.setIndex(index);
+            header.setVersion(ConstantValue.VERSION);
+            header.setTypes(MessageTypeReq.XML_CMD.value());
+            nettyMessage.setHeader(header);
+            nettyMessage.setBody(body.getBytes());
+            nettyMessage.setHeader(header);
+            deviceInfo.getFsh().channelHandlerContext.writeAndFlush(nettyMessage);
+        } else {
+            logger.debug(webServerHandler.postParam.get("deviceid")+" is not online!");
         }
     }
 }

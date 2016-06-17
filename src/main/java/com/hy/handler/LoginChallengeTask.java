@@ -33,7 +33,7 @@ public class LoginChallengeTask implements Runnable {
 
     public void run() {
         try {
-            if (fireServerHandler.loginChangeTimes > (Integer.parseInt(PropertyUtils.getValue("LoginChallengeTimes"))-1) && fireServerHandler.loginChallengeSchedule != null) {
+            if (fireServerHandler.loginChallengeTimes > (Integer.parseInt(PropertyUtils.getValue("LoginChallengeTimes"))-1) && fireServerHandler.loginChallengeSchedule != null) {
                 fireServerHandler.loginChallengeSchedule.cancel(true);
                 fireServerHandler.loginChallengeSchedule = null;
                 FireDataResolver fireDataResolver = new FireDataResolver();
@@ -43,7 +43,7 @@ public class LoginChallengeTask implements Runnable {
                 fireServerHandler.channelHandlerContext.writeAndFlush(fireDataResolver.buildInfoResp("3 times did't response,already in blacklist,please login later!")).addListener(ChannelFutureListener.CLOSE);
             } else {
                 NettyMessage loginChallenge = buildLoginChange();
-                fireServerHandler.loginChangeTimes++;
+                fireServerHandler.loginChallengeTimes++;
 //                logger.debug(new String((byte [])loginChange.getBody()));
                 fireServerHandler.channelHandlerContext.writeAndFlush(loginChallenge);
             }

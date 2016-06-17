@@ -49,13 +49,13 @@ public class FireServerHandler extends ChannelHandlerAdapter {
     public String randomCode;
     public volatile ScheduledFuture<?> loginChallengeSchedule;
     public volatile ScheduledFuture<?> heartBeatSchedule;
-    public volatile int loginChangeTimes;
+    public volatile int loginChallengeTimes;
     public volatile boolean loginSuccess;
     public String ip;
     public volatile int LoseHeartbeatTimes = 0;
 
     public FireServerHandler() {
-        loginChangeTimes = 0;
+        loginChallengeTimes = 0;
         loginSuccess = false;
         logger.debug("FireServerHandler()");
     }
