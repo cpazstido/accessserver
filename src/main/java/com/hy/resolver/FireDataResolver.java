@@ -198,18 +198,48 @@ public class FireDataResolver {
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("StopRealPlay") == 0){
+                    //实时预览
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("VideoEncoderConfiguration") == 0){
                     //可见光相机分辨率设置
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("SetPreset") == 0){
-                    //预置点
+                    //设置预置点
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("GotoPreset") == 0){
+                    //调用预置点
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("ClearPreset") == 0){
+                    //清除预置点
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("SavePatrol") == 0){
-                    //预置点
+                    //巡航路径
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("StartPatrol") == 0){
+                    //运行/停止/删除路径
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("StopPatrol") == 0){
+                    //运行/停止/删除路径
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("DeletePatrol") == 0){
+                    //运行/停止/删除路径
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);

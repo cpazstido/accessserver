@@ -126,12 +126,24 @@ public class DeviceDataResolver {
                 return ChangePTZMode(deviceThread,message);
             }else if (sEventType != null && sEventType.compareTo("StartRealPlay") == 0){
                 return DTOA_XML(deviceThread,message,"StartRealPlay","StartRealPlay Success!");
+            }else if (sEventType != null && sEventType.compareTo("StopRealPlay") == 0){
+                return DTOA_XML(deviceThread,message,"StopRealPlay","StopRealPlay Success!");
             }else if (sEventType != null && sEventType.compareTo("VideoEncoderConfiguration") == 0){
                 return DTOA_XML(deviceThread,message,"VideoEncoderConfiguration","VideoEncoderConfiguration Success!");
             }else if (sEventType != null && sEventType.compareTo("SetPreset") == 0){
                 return DTOA_XML(deviceThread,message,"SetPreset","SetPreset Success!");
+            }else if (sEventType != null && sEventType.compareTo("GotoPreset") == 0){
+                return DTOA_XML(deviceThread,message,"GotoPreset","GotoPreset Success!");
+            }else if (sEventType != null && sEventType.compareTo("ClearPreset") == 0){
+                return DTOA_XML(deviceThread,message,"ClearPreset","ClearPreset Success!");
             }else if (sEventType != null && sEventType.compareTo("SavePatrol") == 0){
                 return DTOA_XML(deviceThread,message,"SavePatrol","SavePatrol Success!");
+            }else if (sEventType != null && sEventType.compareTo("StartPatrol") == 0){
+                return DTOA_XML(deviceThread,message,"StartPatrol","StartPatrol Success!");
+            } else if (sEventType != null && sEventType.compareTo("StopPatrol") == 0){
+                return DTOA_XML(deviceThread,message,"StopPatrol","StopPatrol Success!");
+            } else if (sEventType != null && sEventType.compareTo("DeletePatrol") == 0){
+                return DTOA_XML(deviceThread,message,"DeletePatrol","DeletePatrol Success!");
             }
         }catch (Exception e){
             logger.debug(e);

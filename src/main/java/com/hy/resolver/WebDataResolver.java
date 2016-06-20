@@ -81,11 +81,23 @@ public class WebDataResolver {
             ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("StartRealPlay") ==0){
             ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("StopRealPlay") ==0){
+            ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("VideoEncoderConfiguration") ==0){
             ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("SetPreset") ==0){
             ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("GotoPreset") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("ClearPreset") ==0){
+            ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("SavePatrol") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("StartPatrol") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("StopPatrol") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("DeletePatrol") ==0){
             ATOD_XML(webServerHandler, ctx);
         }
         else {
