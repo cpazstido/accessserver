@@ -224,22 +224,22 @@ public class FireDataResolver {
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("SavePatrol") == 0){
-                    //巡航路径
+                    //保存巡航路径
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("StartPatrol") == 0){
-                    //运行/停止/删除路径
+                    //运行路径
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("StopPatrol") == 0){
-                    //运行/停止/删除路径
+                    //停止路径
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("DeletePatrol") == 0){
-                    //运行/停止/删除路径
+                    //删除路径
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
