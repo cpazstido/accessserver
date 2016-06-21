@@ -71,7 +71,7 @@ public class WebDataResolver {
         logger.debug("action:" + action);
         if (action.compareTo("getDeviceID") == 0) {
             getDeviceID(webServerHandler,ctx);
-        } else if (action.compareTo("getPicture") == 0) {
+        } else if (action.compareTo("getPicture1") == 0) {
             getPicture(webServerHandler,ctx);
         } else if (action.compareTo("setTime") == 0){
             setTime(webServerHandler,ctx);
@@ -98,6 +98,20 @@ public class WebDataResolver {
         } else if (action.compareTo("StopPatrol") ==0){
             ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("DeletePatrol") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("TaskVideo") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("TaskPic") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("VisualCameraPowerOn") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("VisualCameraPowerOff") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("ResetBoard") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("MobileFlow") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("GetPicture") ==0){
             ATOD_XML(webServerHandler, ctx);
         }
         else {

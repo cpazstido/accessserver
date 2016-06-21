@@ -116,7 +116,7 @@ public class DeviceDataResolver {
             String sEventType = rootElt.attributeValue("EventType");// 拿到根节点的属性
             if(sEventType !=null && sEventType.compareTo("GetDeviceID") ==0){
                 return getDeviceID(deviceThread, message);
-            }else if(sEventType !=null && sEventType.compareTo("GetPicture") ==0){
+            }else if(sEventType !=null && sEventType.compareTo("GetPicture1") ==0){
                 return getPicture(deviceThread,message);
             }else if(sEventType != null && sEventType.compareTo("SetTime") == 0){
                 return setTime(deviceThread,message);
@@ -144,6 +144,20 @@ public class DeviceDataResolver {
                 return DTOA_XML(deviceThread,message,"StopPatrol","StopPatrol Success!");
             } else if (sEventType != null && sEventType.compareTo("DeletePatrol") == 0){
                 return DTOA_XML(deviceThread,message,"DeletePatrol","DeletePatrol Success!");
+            } else if (sEventType != null && sEventType.compareTo("TaskVideo") == 0){
+                return DTOA_XML(deviceThread,message,"TaskVideo","TaskVideo Success!");
+            } else if (sEventType != null && sEventType.compareTo("TaskPic") == 0){
+                return DTOA_XML(deviceThread,message,"TaskPic","TaskPic Success!");
+            } else if (sEventType != null && sEventType.compareTo("VisualCameraPowerOn") == 0){
+                return DTOA_XML(deviceThread,message,"VisualCameraPowerOn","VisualCameraPowerOn Success!");
+            } else if (sEventType != null && sEventType.compareTo("VisualCameraPowerOff") == 0){
+                return DTOA_XML(deviceThread,message,"VisualCameraPowerOff","VisualCameraPowerOff Success!");
+            } else if (sEventType != null && sEventType.compareTo("ResetBoard") == 0){
+                return DTOA_XML(deviceThread,message,"ResetBoard","ResetBoard Success!");
+            } else if (sEventType != null && sEventType.compareTo("MobileFlow") == 0){
+                return DTOA_XML(deviceThread,message,"MobileFlow","MobileFlow Success!");
+            } else if (sEventType != null && sEventType.compareTo("GetPicture") == 0){
+                return DTOA_XML(deviceThread,message,"GetPicture","GetPicture Success!");
             }
         }catch (Exception e){
             logger.debug(e);

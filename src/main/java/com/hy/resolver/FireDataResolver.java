@@ -172,7 +172,7 @@ public class FireDataResolver {
                 String sEventType = rootElt.attributeValue("EventType");// 拿到根节点的属性
                 if (sEventType != null && sEventType.compareTo("GetDeviceID") == 0) {
                     //获取设备id
-                } else if (sEventType != null && sEventType.compareTo("GetPicture") == 0) {
+                } else if (sEventType != null && sEventType.compareTo("GetPicture1") == 0) {
                     //获取图片
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
@@ -240,6 +240,41 @@ public class FireDataResolver {
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }else if (sEventType != null && sEventType.compareTo("DeletePatrol") == 0){
                     //删除路径
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("TaskVideo") == 0){
+                    //普通视频录像计划任务
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("TaskPic") == 0){
+                    //普通视频截图计划任务
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("VisualCameraPowerOn") == 0){
+                    //普通视频截图计划任务
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("VisualCameraPowerOff") == 0){
+                    //普通视频截图计划任务
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("ResetBoard") == 0){
+                    //A9单板复位
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("MobileFlow") == 0){
+                    //查询3g或4g流量
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("GetPicture") == 0){
+                    //获取订制相机的图片
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
