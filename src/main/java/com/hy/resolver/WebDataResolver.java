@@ -113,6 +113,14 @@ public class WebDataResolver {
             ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("GetPicture") ==0){
             ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("SetDetectTime") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("GetResource") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("GetStat") ==0){
+            ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("SetMediaSrvAddr") ==0){
+            ATOD_XML(webServerHandler, ctx);
         }
         else {
             sendError(ctx, HttpResponseStatus.BAD_REQUEST);

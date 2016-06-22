@@ -158,6 +158,14 @@ public class DeviceDataResolver {
                 return DTOA_XML(deviceThread,message,"MobileFlow","MobileFlow Success!");
             } else if (sEventType != null && sEventType.compareTo("GetPicture") == 0){
                 return DTOA_XML(deviceThread,message,"GetPicture","GetPicture Success!");
+            } else if (sEventType != null && sEventType.compareTo("SetDetectTime") == 0){
+                return DTOA_XML(deviceThread,message,"SetDetectTime","SetDetectTime Success!");
+            } else if (sEventType != null && sEventType.compareTo("GetResource") == 0){
+                return DTOA_XML(deviceThread,message,"GetResource","GetResource Success!");
+            } else if (sEventType != null && sEventType.compareTo("GetStat") == 0){
+                return DTOA_XML(deviceThread,message,"GetStat","GetStat Success!");
+            } else if (sEventType != null && sEventType.compareTo("SetMediaSrvAddr") == 0){
+                return DTOA_XML(deviceThread,message,"SetMediaSrvAddr","SetMediaSrvAddr Success!");
             }
         }catch (Exception e){
             logger.debug(e);

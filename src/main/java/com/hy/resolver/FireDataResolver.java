@@ -278,6 +278,26 @@ public class FireDataResolver {
                     Element eInfo = rootElt.element("Info");
                     String info = eInfo.getText();
                     sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("SetDetectTime") == 0){
+                    //探测时间设置
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("GetResource") == 0){
+                    //获取设备资源信息
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("GetStat") == 0){
+                    //获取设备状态信息
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
+                }else if (sEventType != null && sEventType.compareTo("SetMediaSrvAddr") == 0){
+                    //设置流媒体服务器地址
+                    Element eInfo = rootElt.element("Info");
+                    String info = eInfo.getText();
+                    sendInfo(response, ctxx, message.getHeader().getIndex(), info);
                 }
                 else{
                     logger.debug("设备返回xml类型未找到！！");
