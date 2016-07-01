@@ -10,14 +10,14 @@ import java.net.Socket;
  * Created by cpazstido on 2016/6/21.
  */
 public class SocketTest {
-    private static int socketNum = 80000;
+    private static int socketNum = 10;
     private static Socket socketList[];
     public static void main(String[] args) {
         socketList = new Socket[socketNum];
         for(int i=0;i<socketNum;i++)
         {
             try {
-                socketList[i] = new Socket("172.16.16.115",9000);
+                socketList[i] = new Socket("172.16.16.112",90);
                 BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(socketList[i].getOutputStream());
                 bufferedOutputStream.write((""+i).getBytes());
                 bufferedOutputStream.flush();
@@ -26,6 +26,7 @@ public class SocketTest {
             }
             System.out.println(i);
         }
+
         try {
             Thread.sleep(1000000);
         } catch (InterruptedException e) {

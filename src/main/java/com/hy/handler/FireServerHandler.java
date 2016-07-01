@@ -114,6 +114,7 @@ public class FireServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         logger.debug(ctx.channel().remoteAddress() + "          fire client exit!");
+        fireClients.remove(deviceId);
         heartBeatSchedule.cancel(true);
         loginChallengeSchedule.cancel(true);
     }

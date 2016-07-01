@@ -3,6 +3,7 @@ package com.hy.resolver;
 import com.hy.bean.*;
 import com.hy.handler.FireServerHandler;
 import com.hy.handler.WebServerHandler;
+import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
@@ -11,16 +12,23 @@ import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.util.CharsetUtil;
+import io.netty.util.internal.StringUtil;
 import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.util.Calendar;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static io.netty.handler.codec.http.HttpHeaders.Names.ACCESS_CONTROL_ALLOW_ORIGIN;
 import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
+import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
+import static javafx.scene.input.KeyCode.K;
+import static javafx.scene.input.KeyCode.V;
 
 /**
  * Created by cpazstido on 2016/6/1.
@@ -40,7 +48,7 @@ public class WebDataResolver {
     public String writeXmlForGetPicture(String info) {
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("eMonitor_XML");
-        root.addAttribute("EventType", "GetPicture");
+        root.addAttribute("EventType", "GetPicture1");
         Element eRandomCode = root.addElement("Info");
         eRandomCode.setText(info);
         return document.asXML();
@@ -121,6 +129,8 @@ public class WebDataResolver {
             ATOD_XML(webServerHandler, ctx);
         } else if (action.compareTo("SetMediaSrvAddr") ==0){
             ATOD_XML(webServerHandler, ctx);
+        } else if (action.compareTo("DeviceOnlineList") ==0){//在线设备列表
+            getOnlineDeviceList(webServerHandler, ctx);
         }
         else {
             sendError(ctx, HttpResponseStatus.BAD_REQUEST);
@@ -181,6 +191,41 @@ public class WebDataResolver {
         } else {
             logger.debug("nulllllllllllllllll");
         }
+    }
+
+    public void getOnlineDeviceList(WebServerHandler webServerHandler, ChannelHandlerContext ctx){
+        String type = (String) webServerHandler.postParam.get("type");
+//        Document document = DocumentHelper.createDocument();
+//        Element root = document.addElement("eMonitor_XML");
+        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, OK);
+        response.headers().set(CONTENT_TYPE, "application/json; charset=UTF-8");
+        response.headers().set(ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+
+        if(type == null || type.compareTo("")==0){
+            logger.error("type is null!");
+            return ;
+        }
+        if(type.compareTo("fire") ==0 ){
+            //获取山火列表
+            ConcurrentHashMap<String,DeviceInfo> map=FireServerHandler.fireClients;
+            List<Map> list = new ArrayList<Map>();
+            JSONArray jsonArray = new JSONArray();
+            for(Map.Entry<String,DeviceInfo> e: map.entrySet() ){
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("DeviceID",e.getValue().getDeviceId());
+                jsonObject.put("Type","fire");
+                jsonObject.put("ChannelNum",e.getValue().getIpcNum()+"");
+                jsonArray.put(jsonObject);
+            }
+            ByteBuf buffer = Unpooled.copiedBuffer(jsonArray.toString(), CharsetUtil.UTF_8);
+            response.content().writeBytes(buffer, jsonArray.toString().getBytes().length);
+            logger.debug("返回给web的数据:" + jsonArray.toString());
+            buffer.release();
+            ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+        }
+        else if(type.compareTo("break") ==0 ){}
+        else if(type.compareTo("video") ==0 ){}
+        else{}
     }
 
     public void setTime(WebServerHandler webServerHandler, ChannelHandlerContext ctx) {
